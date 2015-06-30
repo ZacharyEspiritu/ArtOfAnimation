@@ -1,0 +1,25 @@
+#wrapper {
+    width: 960px;
+    padding: 20px 0 0 0;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 9px 6px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 9px 6px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 9px 6px rgba(0,0,0,0.13);
+}
+
+#thickrule {
+	width: 960px;
+	height: 10px;
+	background-color: #000;
+}
+
+html {
+    background-color: #e6e9e9;
+    background:url(final-images/congruent_pentagon.png);
+	padding: 0;
+	margin: 0;
+}

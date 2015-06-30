@@ -1,0 +1,233 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+	<!-- Header container. Welcome to Google! -->
+	<head>
+	
+		<!-- Meta and Title tags. -->
+		<title>TAoA: Culture</title>
+		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, 
+			Traditional, CGI, Duck and Cover, Gestalt">
+		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of 
+            animation..."> 
+		<meta name="author" content="Zachary Espiritu">
+        
+		<!-- External style sheet. -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+        <link rel="stylesheet" type="text/css" href="wrapper.css">
+        <link rel="stylesheet" type="text/css" href="print.css" media="print">
+        
+        <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
+        <link rel="icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+		
+		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+		<!-- JQuery script CDN. -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Script for drop-down menu. -->
+		<script>
+		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+			var activeElement = $("#cssmenu>ul>li:first");
+
+			$("#cssmenu>ul>li").each(function() {
+				if ($(this).hasClass("active")) {
+					activeElement = $(this);
+				}
+			});
+
+		var posLeft = activeElement.position().left;
+		var elementWidth = activeElement.width();
+		posLeft = posLeft + elementWidth/2 -6;
+		if (activeElement.hasClass("has-sub")) {
+			posLeft -= 6;
+		}
+
+		$("#cssmenu #pIndicator").css("left", posLeft);
+		var element, leftPos, indicator = $("#cssmenu pIndicator");
+	
+		$("#cssmenu>ul>li").hover(function() {
+			element = $(this);
+			var w = element.width();
+			
+			if ($(this).hasClass("has-sub")) {
+				leftPos = element.position().left + w/2 - 12;
+			}
+			else {
+				leftPos = element.position().left + w/2 - 6;
+			}
+
+			$("#cssmenu #pIndicator").css("left", leftPos);
+		}
+		, function() {
+			$("#cssmenu #pIndicator").css("left", posLeft);
+		});
+
+
+		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+		$("#cssmenu>ul").children(".has-sub").each(function() {
+			var posLeftArrow = $(this).width();
+			posLeftArrow /= 2;
+			posLeftArrow -= 12;
+			$(this).find(".submenuArrow").css("left", posLeftArrow);
+
+		});
+
+		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+		$( "#menu-button" ).click(function(){
+    		if ($(this).parent().hasClass("open")) {
+    			$(this).parent().removeClass("open");
+    		}
+    		else {
+    			$(this).parent().addClass("open");
+    		}
+    	});
+		</script>
+
+	</head>
+	
+	<!-- Body container. -->
+	<body>
+	
+	<!-- Wrapper section to make everything look neat and tight. -->
+	<div id="wrapper">
+	
+        <header>
+            <h1>The Art of Animation</h1>
+        </header>
+
+		<!-- Menu content. -->
+        <nav role="navigation">
+            <div id="cssmenu">
+                <ul>
+				    <li class="active"><a href="index.html"><span>Home</span></a></li>
+				    <li class="has-sub"><a href="history.html"><span>History</span></a>
+				        <ul>
+				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                        </ul>
+                    </li>
+				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+				    <li><a href="culture.html"><span>Culture</span></a></li>
+				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                </ul>
+            </div>
+        </nav>
+		
+		<!-- Paragraph content. -->
+		<div id="content">
+		
+			<main id="text" role="main">
+				
+                <hgroup>
+                    <h2>Cultural Uses of Animation</h2>
+                    <h3 id="overview">Overview</h3>
+                </hgroup>
+				
+                <p>Animation, since its inception in the late 1650&rsquo;s, has been used in various ways in popular culture, whether for political, social, or entertainment uses. While some have received critical acclaim for their contributions to the cinematography world, others have received critical attention due to their political nature or anti-viewpoint based plotlines.</p>
+                
+                <h3 id="political">Political Usage</h3>
+                <img src="final-images/duck-and-cover-poster.png" class="rightimg" style="max-width: 300px; margin-top: 10px;">
+                <blockquote cite="http://www.atomicplatters.com/more.php?id=57_0_1_0_M">
+                    <p><span class="italic">There was a turtle by the name of Bert<br>
+                        And Bert the Turtle was very alert<br>
+                        When danger threatened him he never got hurt<br>
+                        He knew just what to do:</span></p>
+	
+                    <p><span class="italic">He&rsquo;d duck and cover,<br> 
+                        Duck, duck, and cover!<br>
+                        He&rsquo;d hide his head and tail and four little feet<br>
+                        He&rsquo;d duck and cover!</span></p>
+                    <p>&#8212; <cite>Duck and Cover</cite>, 1952<sup><a href="#fn1" id="ref1">[1]</a></sup></p>
+                </blockquote>
+                <p><cite>Duck and Cover</cite> was a 1951 civil defense film commissioned by the United States Federal Civil Defense Administration and produced by Archer Productions. Sometimes misinterpreted as propaganda, the main plot of the film shows an anthropomorphic turtle taking cover under his shell just before a monkey holding a bomb drops upon him. As the film switches back and forth between live footage and animated content, a narrator explains what children should do in the event of a nuclear explosion, suggesting that ducking under objects such as desks would prove to be safer than if they were standing or in the open.</p>
+                <p>As the film&rsquo;s methods are generally useless for anyone who happened to be in the vicinity of an exploding atomic bomb, one of the film&rsquo;s most common criticisms encountered is that the eventual radiation effects of a bomb would still kill those who <q>ducked and covered,</q> regardless of any preemptive measures that were taken; on the Internet Archive&rsquo;s comment page on Duck and Cover on October 24, 2009, user <em>HollywoodBob</em> wrote: <q>We had <q>Drop Drills</q> [&hellip;] I had studied a little about the atomic bomb and refused to drop. I told my teacher, <q>if this were an atomic bomb attack, we&rsquo;re all dead!</q></q> Even with its controversial nature, and quite possibly because of it, <cite>Duck and Cover</cite> was selected for the 2004 National Film Registry of <q>culturally, historically, and aesthetically significant</q> motion pictures.<sup><a href="#fn2" id="ref2">[2]</a></sup></p>
+                <p class="last"> </p>
+                                
+                <nav id="sectionnav">
+                
+                    <div id="previoussectionnav">
+                        <a href="modern-techniques.html">
+                        <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>Previous: Modern Techniques</span>
+                        </a>
+                    </div>
+                    
+                    <div id="nextsectionnav">
+                    <a href="timeline.html">
+                        Next: Animation&rsquo;s Timeline&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa fa-chevron-right fa-2x pull-right"></i>
+                    </a>
+                    </div>
+                    
+                </nav>
+				
+			</main>
+            
+            <!-- Sidebar with pertinent links. -->
+            <!-- Sidebar with pertinent links. -->
+            <aside id="sidebar" role="complementary">
+                
+                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+                    <div id="contents">
+                        <!-- Insert an outline of the above article here. -->
+                        <ul>
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#political">Political Usage</a></li>
+                        </ul>
+                    </div>
+                    
+            </aside>
+		
+		</div>
+		
+        <!-- Just a spacer. -->
+		<div id="thickrule"></div>
+		
+		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+		<footer role="contentinfo">
+				
+			<!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
+			<a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
+			
+			<section id="references">
+                <ol class="references">    
+					<li><span id="fn1">Sitz, Ken, and Bill Geerhart. <q>Bert the Turtle (The Duck and Cover Song): Dick <q>Two Ton</q> Baker.</q> Conelrad - Atomic Platters: Cold War Music From the Golden Age of Homeland Security. Last modified May 10, 2006. Accessed January 10, 2014. <a href="http://www.atomicplatters.com/more.php?id=57_0_1_0_M">http://www.atomicplatters.com/more.php?id=57_0_1_0_M.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                    <li><span id="fn2">The Internet Archive. <q>Duck and Cover (1951).</q> Prelinger Archives. Accessed January 13, 2014. <a href="https://archive.org/details/DuckandC1951">https://archive.org/details/DuckandC1951.</a><a href="#ref2" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                    
+				</ol>	
+			</section>
+			<br>
+			<!-- Footer menu with all the links. -->
+			<section id="footermenu" class="center">
+				
+                <small style="font-size: 100%;">
+                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                    &copy; 2014<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                </small>
+                
+				<nav role="navigation" style="padding-top: 6px;">
+					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+				</nav>
+				
+			</section>
+    
+		</footer>
+	
+	</div>
+		
+	</body>	
+	
+</html> 

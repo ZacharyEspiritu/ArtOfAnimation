@@ -1,0 +1,263 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+	<!-- Header container. Welcome to Google! -->
+	<head>
+	
+		<!-- Meta and Title tags. -->
+		<title>TAoA: Modern Techniques</title>
+		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, 
+			Traditional, CGI, Duck and Cover, Gestalt">
+		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of 
+            animation..."> 
+		<meta name="author" content="Zachary Espiritu">
+        
+		<!-- External style sheet. -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+        <link rel="stylesheet" type="text/css" href="wrapper.css">
+        <link rel="stylesheet" type="text/css" href="print.css" media="print">
+        
+        <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
+        <link rel="icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+		
+		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+		<!-- JQuery script CDN. -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Script for drop-down menu. -->
+		<script>
+		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+			var activeElement = $("#cssmenu>ul>li:first");
+
+			$("#cssmenu>ul>li").each(function() {
+				if ($(this).hasClass("active")) {
+					activeElement = $(this);
+				}
+			});
+
+		var posLeft = activeElement.position().left;
+		var elementWidth = activeElement.width();
+		posLeft = posLeft + elementWidth/2 -6;
+		if (activeElement.hasClass("has-sub")) {
+			posLeft -= 6;
+		}
+
+		$("#cssmenu #pIndicator").css("left", posLeft);
+		var element, leftPos, indicator = $("#cssmenu pIndicator");
+	
+		$("#cssmenu>ul>li").hover(function() {
+			element = $(this);
+			var w = element.width();
+			
+			if ($(this).hasClass("has-sub")) {
+				leftPos = element.position().left + w/2 - 12;
+			}
+			else {
+				leftPos = element.position().left + w/2 - 6;
+			}
+
+			$("#cssmenu #pIndicator").css("left", leftPos);
+		}
+		, function() {
+			$("#cssmenu #pIndicator").css("left", posLeft);
+		});
+
+
+		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+		$("#cssmenu>ul").children(".has-sub").each(function() {
+			var posLeftArrow = $(this).width();
+			posLeftArrow /= 2;
+			posLeftArrow -= 12;
+			$(this).find(".submenuArrow").css("left", posLeftArrow);
+
+		});
+
+		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+		$( "#menu-button" ).click(function(){
+    		if ($(this).parent().hasClass("open")) {
+    			$(this).parent().removeClass("open");
+    		}
+    		else {
+    			$(this).parent().addClass("open");
+    		}
+    	});
+		</script>
+
+	</head>
+	
+	<!-- Body container. -->
+	<body>
+	
+	<!-- Wrapper section to make everything look neat and tight. -->
+	<div id="wrapper">
+	
+        <header>
+            <h1>The Art of Animation</h1>
+        </header>
+
+		<!-- Menu content. -->
+        <nav role="navigation">
+            <div id="cssmenu">
+                <ul>
+				    <li class="active"><a href="index.html"><span>Home</span></a></li>
+				    <li class="has-sub"><a href="history.html"><span>History</span></a>
+				        <ul>
+				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                        </ul>
+                    </li>
+				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+				    <li><a href="culture.html"><span>Culture</span></a></li>
+				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                </ul>
+            </div>
+        </nav>
+		
+		<!-- Paragraph content. -->
+		<div id="content">
+		
+			<main id="text" role="main">
+				
+                <hgroup>
+                    <h2>Modern Techniques</h2>
+                    <h3 id="overview">Overview</h3>
+                </hgroup>
+				
+                <p>Throughout the years, innumerable approaches to creating animated films have arisen. While each differs in technical difficulty and the quality of their outputs, they all are unique and ubiquitous methods to creating animation.</p>
+                
+                <h3 id="traditional">Traditional Animation (Hand-Drawn Animation)</h3>
+                <img src="final-images/cel-animator.png" class="rightimg" style="max-width: 399px;">
+                <p>Traditional animation (also known as hand-drawn animation or cel animation) was the process used for the creating of hand-drawn animated films in the 20th century. The process utilizes <q>cels</q>, or transparent cellulose acetate sheets, that are designed to be drawn upon, then laid over other cels to be photographed. This allows for drawings to be reused without having to re-draw the components of each frame individually.<sup><a href="#fn1" id="ref1">[1]</a></sup></p>
+                <p>However, with the advent of computer-assisted animation processes, the traditional cel animation process became obsolete by the beginning of the 21st century. Today, drawings and backgrounds are usually scanned or even directly drawn into a computer system. Animators use specialized software programs to color the drawings and simulate camera movement and effects. Post-production processes allow the film to be output to several delivery formats, such as digital video, or the now outdated 35 mm film.<sup><a href="#fn2" id="ref2">[2]</a></sup></p>
+                <p>It should be noted that the traditional form of cel animation (using acetate sheets) is incredibly time consuming and expensive due to the number of individual cels and backgrounds that need to be created. The more cels that are created, the more money must be spent on both materials and human labor. Because of this, many shows that have low budgets repeat backgrounds and frames in order to keep the costs down. Computer-assisted processes have lowered these costs by preventing the need for materials such as acetate sheets and specialized inks.</p>
+                <p>As hand-drawn animation is greatly influenced by the skill and artistic style of the animators producing the frames, the terms <q>full</q> and <q>limited animation</q> were coined to describe the quality of the animations produced:</p>
+                <ul>
+                    <li><span class="underline">Full animation</span> refers to, as stated by Casey Riffel, the <q>aesthetic and industrial aspects on display [such as those seen] in canonical Disney features</q>. Film studies courses use this term to describe the process of producing high-quality hand-drawn films that regularly use detailed drawings and realistic movement. Many of the Disney animated features are clear examples of full animation, as opposed to the more <q>cartoon</q> styles of the Warner Bros. animation studio.<sup><a href="#fn3" id="ref3">[3]</a></sup></li>
+                    <li><span class="underline">Limited animation</span> refers to the use of less detailed drawings and methods of movement; somewhat of a <q>quantity-against-quality</q> approach. In the 1940&rsquo;s, several animators who left Disney formed the United Productions of America. In response to the <q>overly naturalistic</q> practices of Disney animation, these artists pioneered the aesthetic technique of limited animation&mdash;creating a flat and planar world to react against the world of Disney <q>cartoon space</q>. Limited animation is primarily used in the production of cost-effective material for television (such as the work of Hanna-Barbera, Filmation, or web cartoons) where a large output of animations is required.<sup><a href="#fn4" id="ref4">[4]</a></sup></li>
+                </ul>
+                
+                <h3 id="stop-motion">Stop Motion Animation</h3>
+                <p>Stop-motion animation, also known as stop frame animation, is a process used to describe animation created by the physical manipulation of real-world objects and photographing them one-frame at a time. This creates the illusion that the objects are moving on their own when the frames are played in a continuous sequence. Usually, figures with moveable joints or clay figures are often used in stop motion for their ease of repositioning, but other objects can be used to achieve a stop-motion effect.<sup><a href="#fn5" id="ref5">[5]</a></sup> Numerous sub-genres of stop-motion animation exist:</p>
+                <ul>
+                    <li><span class="underline">Puppet animation</span> is where stop-motion puppet figures are used in a constructed set. Examples include <cite>James and the Giant Peach</cite> (1996), <cite>Coraline</cite> (2009), and the TV series <cite>Robot Chicken</cite> (2005&ndash;present).</li>
+                    <li><span class="underline">Clay animation</span>, more popularly known under the trademarked term of “claymation”, uses figures made of clay under the same principle of puppet animation. Examples include the <cite>Wallace and Gromet</cite> shorts (1989&ndash;present), the children’s TV show <cite>Shaun the Sheep</cite> (2007&ndash;present), and <cite>Chicken Run</cite> (2000).</li>
+                    <li><span class="underline">Cutout animation</span> is a technique used to produce stop-motion animations using flat objects on a background. Today, as physically cutting out materials and producing each frame is too time-consuming for most production needs, the style of cutout animation is produced via computer-generated means with little to zero loss of stylization. A most notable example is <cite>South Park</cite> (1997&ndash;present), as the pilot episode was created using actual cutouts, but production of the series was later changed to computer-generated animation.</li>
+                    <li><span class="underline">Brickfilm</span> is the term used to describe the use of Lego or similar “brick toys” in stop-motion.<sup><a href="#fn6" id="ref6">[6]</a></sup></li>
+                </ul>
+                
+                <h3 id="computer">Computer Animation</h3>
+                <h4 id="2-d">2D Animation</h4>
+                <p>Two-dimensional computer animation is the creation of moving pictures in a two-dimensional enviroment. Essentially the digital successor to traditional <q>cel animation,</q> 2D animation works off the same properties as previous forms of animation with a greatly enhanced rate of efficiency.<sup><a href="#fn7" id="ref7">[7]</a></sup> Animators generally create <q>stick models</q> of the characters they are trying to present, and then use a keyframing method (explained in more detail below) to quickly set frames which are then automatically setup for processing by various animation programs.<sup><a href="#fn8" id="ref8">[8]</a></sup></p>
+                
+                <h4 id="3-d">3D Animation</h4>
+                <img src="final-images/cgi-model.png" class="rightimg" style="max-width: 337px ; padding-top: 5px;" alt="Examples of animation models.">
+                <p>The concept of 3-dimensional computer-generated imagery (CGI) in animation contains a variety of techniques, with the central factor being that the animation is created using a computer, of course. CGI is used in films, television programs, and, increasingly nowadays, video games. Video games often use real-time computer graphics by utilizing dynamic camera movements in a three-dimensional space and using pre-defined, repetitive motions for the player (such as walking, punching, etc.).</p>
+				<img src="final-images/paperman.png" class="leftimg" style="max-width: 399px;">
+                <p>While this animation takes less time to produce than previous traditional animation, an animator must overcome a steep learning curve to be able to tap into the full potential of most animation programs. Enough processing power to render such animations is required, and detailed animations can take extremely long times to render even with top-line equipment. However, the recent accessibility of CGI software and increasing computer speeds has allowed individual artists and small teams to produce professional films and games from pre-built home workstations.<sup><a href="#fn9" id="ref9">[9]</a></sup> Three-dimensional CGI animation is an evolution from basic cartoon animation into a realm that is able to represent realism as accurately as possible. Examples of such animation are <cite>The Polar Express</cite> (2004), <cite>Paperman</cite> (2012), as shown in the image above, and <cite>Frozen</cite> (2013).</p>
+                <p>In most three-dimensional animation systems, an animator creates a skeletal model, a wireframe of a character&rsquo;s body anatomy. The skeletal model is used to compute the exact position and orientation of the character in a space. By changing the skeletal model from frame to frame (either by manually dragging the anatomical parts around the screen or by modifying the positioning variables of each of the parts), the animator can create motion as the frames are played continuously. This method is known as <q>keyframe animation,</q> where animators can set the positioning variables, known as <q>avars</q> (animation variables), of character models at strategic keyframes and let specifically designed animation programs automatically create the missing variables for the frames in-between.<sup><a href="#fn10" id="ref10">[10]</a></sup></p>
+                <p>In contrast to the previously mentioned process of keyframe animation, a newer method known as <q>motion capture</q> makes use of live actors that act out the sense as if they were the character to be animated. Actors wear specialized <q>markers</q> which are used to track the positioning of the actor when his or her motion is recorded. The data gathered from these markers is mapped to a three-dimensional model so that the model performs the same actions as the actor.<sup><a href="#fn11" id="ref11">[11]</a></sup></p>
+                <p class="last">Both of these methods have their advantages&mdash;keyframe animation can produce motions that would be difficult or otherwise impossible to act out, while motion capture can easily reproduce the actions and subtleties of a particular actor.</p>
+                                
+                <nav id="sectionnav">
+                
+                    <div id="previoussectionnav">
+                        <a href="film-era.html">
+                        <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>Previous: The Film Eras of Animation</span>
+                        </a>
+                    </div>
+                    
+                    <div id="nextsectionnav">
+                    <a href="culture.html">
+                        Next: Cultural Usage&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa fa-chevron-right fa-2x pull-right"></i>
+                    </a>
+                    </div>
+                    
+                </nav>
+				
+			</main>
+            
+            <!-- Sidebar with pertinent links. -->
+            <!-- Sidebar with pertinent links. -->
+            <aside id="sidebar" role="complementary">
+                
+                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+                    <div id="contents">
+                        <!-- Insert an outline of the above article here. -->
+                        <ul>
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#traditional">Traditional Animation</a></li>
+                            <li><a href="#stop-motion">Stop-motion Animation</a></li>
+                            <li><a href="#computer">Computer Animation</a></li>
+                            <ol>
+                                <li><a href="#2-d">2D Animation</a></li>
+                                <li><a href="#3-d">3D Animation</a></li>
+                            </ol>
+                        </ul>
+                    </div>
+                    
+            </aside>
+		
+		</div>
+		
+        <!-- Just a spacer. -->
+		<div id="thickrule"></div>
+		
+		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+		<footer role="contentinfo">
+				
+			<!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
+			<a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
+			
+			<section id="references">
+                <ol class="references">    
+					<li><span id="fn1">Basile, Nancy. <q>Cel Animation.</q> About.com: Animated TV. Accessed January 11, 2014. <a href="http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm">http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                    <li><span id="fn2">Kayo, Mark. <q>The History of Cartoon Cel Animation.</q> eHow. Accessed January 16, 2014. <a href="http://www.ehow.com/about_6454561_history-cartoon-cel-animation.html">http://www.ehow.com/about_6454561_history-cartoon-cel-animation. html</a><a href="#ref2" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn3">Riffel, Casey. <q>Dissecting Bambi: Multiplanar Photography, the Cel Technique, and the Flowering of Full Animation.</q> <cite>Velvet Light Trap</cite> 69 (2012): 3-16. Accessed January 13, 2014. <a href="http://search.proquest.com/docview/923757400/142F95CFC89119D0A77/1?accountid=41494">http://search.proquest.com/docview/923757400/142F9 5CFC89119D0A77/1?accountid=41494.</a><a href="#ref3" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn4">University of California, Santa Barbara. <q>Art Music Video.</q> UCSB Courses. Accessed May 13, 2014. <a href="http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm">http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm.</a><a href="#ref4" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn5">Priebe, Ken A. <cite>The advanced art of stop-motion animation</cite>. Boston, Mass.: Course Technology, 2011. <a href="#ref5" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn6">Power, Pat. <q>Ludic Toons: The Dynamics of Creative Play in Studio Animation.</q> <cite>American Journal of Play</cite> 5, no. 1 (2012): 22-54. Accessed January 14, 2014. <a href="http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494">http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494.</a><a href="#ref6" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn7">ScienceDaily. <q>Computer animation.</q> ScienceDaily Articles. Accessed May 13, 2014. <a href="http://www.sciencedaily.com/articles/c/computer_animation.htm">http://www.sciencedaily.com/articles/c/computer_animation.htm.</a><a href="#ref7" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn8">DBS Interactive. <q>What Is the Difference Between 3D and 2D Animation?.</q> DBS. Last modified January 29, 2010. Accessed May 13, 2014. <a href="http://www.dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/">http://www. dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/</a><a href="#ref8" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn9">Dube, Ryan. <q>What Is CGI Animation?: Technology Explained.</q> MakeUseOf.com. Accessed January 14, 2014. <a href="http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/">http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/</a><a href="#ref9" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn10">Roos, Dave. <q>How Computer Animation Works.</q> HowStuffWorks, Inc. Accessed January 15, 2014. <a href="http://entertainment.howstuffworks.com/computer-animation.htm">http://entertainment.howstuffworks.com/computer-animation.htm</a><a href="#ref10" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    <li><span id="fn11">Moniot, Robert K. <q>Motion Blur.</q> Digital Artform. Last modified June 4, 2005. Accessed January 14, 2014. <a href="http://www.digitalartform.com/archives/2005/06/motion_blur.html">http://www.digitalartform.com/archives/2005/06/ motion_blur.html</a><a href="#ref11" title="Jump back to place in the text."> &#8617;</a></span></li>
+                    
+				</ol>	
+			</section>
+			<br>
+			<!-- Footer menu with all the links. -->
+			<section id="footermenu" class="center">
+				
+                <small style="font-size: 100%;">
+                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                    &copy; 2014<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                </small>
+                
+				<nav role="navigation" style="padding-top: 6px;">
+					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+				</nav>
+				
+			</section>
+    
+		</footer>
+	
+	</div>
+		
+	</body>	
+	
+</html> 

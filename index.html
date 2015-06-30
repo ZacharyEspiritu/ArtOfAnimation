@@ -1,0 +1,204 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+	<!-- Header container. Welcome to Google! -->
+	<head>
+	
+		<!-- Meta and Title tags. -->
+		<title>The Art of Animation</title>
+		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, 
+			Traditional, CGI, Duck and Cover, Gestalt">
+		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of 
+            animation..."> 
+		<meta name="author" content="Zachary Espiritu">
+        
+		<!-- External style sheet. -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+        <link rel="stylesheet" type="text/css" href="wrapper.css">
+        <link rel="stylesheet" type="text/css" href="print.css" media="print">
+        
+        <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
+        <link rel="icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+		
+		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+		<!-- JQuery script CDN. -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Script for drop-down menu. -->
+		<script>
+		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+			var activeElement = $("#cssmenu>ul>li:first");
+
+			$("#cssmenu>ul>li").each(function() {
+				if ($(this).hasClass("active")) {
+					activeElement = $(this);
+				}
+			});
+
+		var posLeft = activeElement.position().left;
+		var elementWidth = activeElement.width();
+		posLeft = posLeft + elementWidth/2 -6;
+		if (activeElement.hasClass("has-sub")) {
+			posLeft -= 6;
+		}
+
+		$("#cssmenu #pIndicator").css("left", posLeft);
+		var element, leftPos, indicator = $("#cssmenu pIndicator");
+	
+		$("#cssmenu>ul>li").hover(function() {
+			element = $(this);
+			var w = element.width();
+			
+			if ($(this).hasClass("has-sub")) {
+				leftPos = element.position().left + w/2 - 12;
+			}
+			else {
+				leftPos = element.position().left + w/2 - 6;
+			}
+
+			$("#cssmenu #pIndicator").css("left", leftPos);
+		}
+		, function() {
+			$("#cssmenu #pIndicator").css("left", posLeft);
+		});
+
+
+		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+		$("#cssmenu>ul").children(".has-sub").each(function() {
+			var posLeftArrow = $(this).width();
+			posLeftArrow /= 2;
+			posLeftArrow -= 12;
+			$(this).find(".submenuArrow").css("left", posLeftArrow);
+
+		});
+
+		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+		$( "#menu-button" ).click(function(){
+    		if ($(this).parent().hasClass("open")) {
+    			$(this).parent().removeClass("open");
+    		}
+    		else {
+    			$(this).parent().addClass("open");
+    		}
+    	});
+		</script>
+
+	</head>
+	
+	<!-- Body container. -->
+	<body>
+	
+	<!-- Wrapper section to make everything look neat and tight. -->
+	<div id="wrapper">
+	
+        <header>
+            <h1>The Art of Animation</h1>
+        </header>
+
+		<!-- Menu content. -->
+        <nav role="navigation">
+            <div id="cssmenu">
+                <ul>
+				    <li class="active"><a href="index.html"><span>Home</span></a></li>
+				    <li class="has-sub"><a href="history.html"><span>History</span></a>
+				        <ul>
+				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                        </ul>
+                    </li>
+				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+				    <li><a href="culture.html"><span>Culture</span></a></li>
+				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                </ul>
+            </div>
+        </nav>
+		
+		<!-- Paragraph content. -->
+		<div id="content">
+		
+			<main id="text" role="main">
+				
+                <hgroup>
+                    <h2>Animation</h2>
+                    <h3 id="overview">Overview</h3>
+                </hgroup>
+				
+				<blockquote cite="http://www.questiaschool.com/read/122241920/drawing-the-line-the-untold-story-of-the-animation">
+					<p>In 20,000 <span class="smallcaps">b.c.e.</span>, Paleolithic cave painters attempted to draw moving figures on cave walls by drawing <q>running</q> animals in superimposed positions. The artists worked until their eyes went bad; they got no pay; they got no credit, and they were eventually eaten by wild animals.</p>
+					<p>Animation was born."</p>
+					<p>&#8212; Tom Sito, <cite>Drawing the Line: The Untold Story of the Animation Unions from Bosko to Bart Simpson</cite> (2006)</p>
+				</blockquote>
+				<p><img src="/zespiritu17/final-images/Animation_Example.png" title="An example of multiple frames played in rapid succession to produce a moving image. Photograph by Wikimedia user Serg!o." class="rightimg">But before we can discuss <em>anything</em> about animation, we have to first answer this question: what exactly is animation? Animation simply isn&#8217;t drawing slightly changing figures over and over again and flipping through them quickly&#8212;it&#8217;s the process of recording an image that goes through continuous motion and shape changes in order to portray the &quot;illusion&quot; of movement. This illusion&#8212;as seen in almost all motion pictures in general&#8212;is thought to rely on the <em>phi phenomenon</em>, a psychological belief that originated from the work of Max Wertheimer, the creator of Gestalt psychology. According to Gestalt psychology, <q cite="http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm">the apparent <q>movement</q> created by an ever-changing series of images happens because our minds automatically fill in missing information.</q><sup><a href="#fn1" id="ref1">[1]</a></sup> Gestalt psychologists developed a set of principles to explain the concept of perceptual organization&#8212;how our brains group smaller objects together to form larger ones.<sup><a href="#fn2" id="ref2">[2]</a></sup></p>
+				<p><img src="/zespiritu17/final-images/Paleolithic_Animation.png" title="Action-packed photographs of Paleolithic cave paintings depicting a sense of motion. Photograph courtesy of Werner Herzog." class="leftimg">As referenced in the introduction, the first evidence of interest in the concept of capturing moving figures in a still drawing dates all the way back to early Paleolithic cave paintings, where drawings have shown animals with multiple legs in superimposed positions, clearly attempting to represent some depiction of motion.<sup><a href="#fn3" id="ref3">[3]</a></sup> Animation has, of course, grown since then, and numerous technological breakthroughs have increased the quality of animations that are being produced today.</p>
+				<p>Modern animation processes have allowed artists to create expansive stylizations of works, allowing them to create films for numerous uses. Popular culture animations include the infamous <cite>Duck and Cover (1952)</cite> civil defense film, featuring Bert the Turtle, imploring children to duck and take cover under their desks in the event of a nuclear warhead attack,<sup><a href="#fn4" id="ref4">[4]</a></sup> and current &quot;Disney-style&quot; children&#8217;s animation shows, like <cite>Phineas and Ferb</cite>,<sup><a href="#fn5" id="ref5">[5]</a></sup> or full-length feature movies, like <cite>Frozen (2013)</cite>. </p>
+				<p class="last">Animation is an expansive topic, one that spans over years of evolution and craft that have led it to where it stands today. Together, let&#8217;s explore <em>the art of animation.</em></p>
+			</main>
+            
+            <!-- Sidebar with pertinent links. -->
+            <aside id="sidebar" role="complementary">
+                
+                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+                    <div id="contents">
+                        <!-- Insert an outline of the above article here. -->
+                        <ul>
+                            <li><a href="#overview">Overview</a></li>
+                        </ul>
+                    </div>
+                    
+            </aside>
+		
+		</div>
+		
+        <!-- Just a spacer. -->
+		<div id="thickrule"></div>
+		
+		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+		<footer role="contentinfo">
+				
+			<!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
+			<a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
+			
+			<section id="references">
+                <ol class="references">    
+					<li><span id="fn1">Cherry, Kendra. <q>What is Gestalt Psychology?</q> About.com Psychology. Last modified November 12, 2013. Accessed January 9, 2014. <a href="http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm">http://psychology. about.com/od/schoolsofthought/f/gestalt_faq.htm.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                    <li><span id="fn2">Anderson, Joseph and Barbara Anderson. "The Myth of Persistence of Vision Revisited." <em>Journal of Film and Video</em> 45, no. 1 (Spring 1993): 3&ndash;12.<a href="#ref2" title="Jump back to place in the text."> &#8617;</a></span></li>
+					<li><span id="fn3">Sito, Tom. <q>Introduction: Why A History of Animation Unions?</q> In <cite>Drawing the Line: The Untold Story of the Animation Unions from Bosko to Bart Simpson</cite>, 1. Lexington: University Press of Kentucky, 2006.<a href="#ref3" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+					<li><span id="fn4"><cite>Duck and Cover</cite>. Film. Directed by Anthony Rizzo. New York: Archer Productions, 1952. Accessed from <a href="https://archive.org/details/DuckandC1951">https://archive.org/details/DuckandC1951</a>.<a href="#ref4" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+					<li><span id="fn5">Povenmire, Dan, and Jeff "Swampy" Marsh, prods. <em>Phineas and Ferb</em>, "Pilot," episode 1. Originally aired August 17, 2007.<a href="#ref5" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+				</ol>	
+			</section>
+			<br>
+			<!-- Footer menu with all the links. -->
+			<section id="footermenu" class="center">
+				
+                <small style="font-size: 100%;">
+                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                    &copy; 2014<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                </small>
+                
+				<nav role="navigation" style="padding-top: 6px;">
+					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+				</nav>
+				
+			</section>
+    
+		</footer>
+	
+	</div>
+		
+	</body>	
+	
+</html> 

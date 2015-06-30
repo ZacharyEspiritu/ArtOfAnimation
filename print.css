@@ -1,0 +1,168 @@
+/* Stand-alone modifiers for simplicity. */
+.bold {font-weight: 700;}
+.underline {text-decoration: underline;}
+.italic {font-style: italic;}
+
+.smallcaps {font-variant: small-caps;}
+
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+/* No display navigation menus. */
+nav {display: none;}
+aside {display: none;}
+
+/* Used only for title text. */
+h1 {
+	font-size: 7em;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+/* Header formatting. */
+h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+}
+h2 {
+	font-size: 2.7em;
+	margin: 13px 0 0 0;
+}
+h3 {
+	font-size: 1.6em;
+	margin: 10px 0 0 0;
+}
+
+/* Custom fonts. */
+html { font-size: 100%; }
+#sidebar {
+	display: none;
+}
+#references {
+	font-family: 'Garamond', 'Times New Roman', sans-serif;
+	font-size: 0.9em;
+}
+#footermenu {
+    display: none;
+}
+p {
+	font-family: 'Garamond', 'Times New Roman', serif;
+	font-size: 1em;
+	text-align: justify;
+}
+sup {
+	vertical-align: super; /* vertical-align used to prevent the 
+                           /* superscript from automatically  */
+	line-height: 0;        /* increasing the line height.     */
+	font-size: 0.735em;
+}
+
+/* Blockquote hanging opening quote. */
+blockquote:before {
+	display: block;
+	height: 0;
+	content: '\201C';
+	margin-left: -0.7em;
+	font-style: italic;
+	font-size: 400%;
+	font-family: 'Georgia', 'Times New Roman', serif;
+	color: #999;
+}
+/* Multi-level quote fix in blockquotes. */
+blockquote q:before { content: '‘'; content: open-quote; }
+blockquote q:after { content: '’'; content: close-quote; }
+blockquote q q:before { content: '“'; content: open-quote; }
+blockquote q q:after { content: '”'; content: close-quote; }
+
+/* Used specifically to encase text blocks with <span> that <p> can't go around. */
+span.p_font {
+	font-family: 'Garamond', 'Times New Roman', serif;
+	font-size: 1em;
+}
+span.oswald_font {
+    font-family: 'Oswald', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.89em;
+	letter-spacing: 0.045em;
+}
+
+/* Used to move the references at the bottom of each page to a more visually appealing position. */
+ol.references {
+	padding-top: 0;
+	padding-left: 20px;
+	margin-top: 0;
+}
+
+/* Designed for use in the last paragraph to insert some well-needed padding. */
+p.last { margin-bottom: 21px; }
+
+/* Classes for <img> tags. */
+img {
+    max-width: 665px;
+}
+img.leftimg {
+	float: left;
+	margin: 12px 18px 12px 0;
+}
+img.rightimg {
+	float: right;
+	margin: 12px 0 12px 18px;
+}
+img.centerimg {
+	margin: 12px auto 12px auto;
+}
+
+/* Stuff for link coloring. */
+a:link {
+	color: #009191;
+	text-decoration: none;
+}
+a:visited {
+	color: #A70092;
+	text-decoration: none;
+}
+a:hover {
+	color: #4C00A3;
+	text-decoration: none;
+}
+a:active {
+	color: #FF3100;
+	text-decoration: none;
+}
+
+/* Footer: Increase padding-top to avoid contact with the  main text area. */
+footer { padding-top: 12px; }
+
+/* Footermenu: used to automatically increase space between the menu links. */
+#footermenu a {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Attempt to make the 2-column layout height equal. */
+#content { display: table; }
+#sidebar { display: none; }
+#text { display: table-cell; }
+
+/* Sidebar stuff. */
+#sidebar {
+	display: none;
+}
+
+#text {
+    width: 100%;
+}
+
+/* References at bottom of page for column text wrap. */
+#references {
+	padding: 3px 27px 0 27px;
+	column-count: 2;
+	column-gap: 36px;
+	column-rule: thin solid #000000;
+	
+	-moz-column-count: 2;
+	-moz-column-gap: 36px;
+	-moz-column-rule: thin solid #000000;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 36px;
+	-webkit-column-rule: thin solid #000000;
+}

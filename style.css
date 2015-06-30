@@ -1,0 +1,345 @@
+/* Stand-alone modifiers for simplicity. */
+.bold {font-weight: 700;}
+.underline {text-decoration: underline;}
+.italic {font-style: italic;}
+
+.smallcaps {font-variant: small-caps;}
+
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+/* Used only for title text. */
+h1 {
+	font-size: 7em;
+	text-align: center;
+	margin: 0 0 17px 0;
+	font-family: 'Oswald', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 1px;
+	text-shadow: #fff 0px 1px 1px;
+	-moz-font-smoothing: grayscale;
+}
+
+/* Header formatting. */
+h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: grayscale;
+}
+h2 {
+	font-size: 2.7em;
+	margin: 13px 0 0 0;
+}
+h3 {
+	font-size: 1.6em;
+	margin: 12px 0 0 0;
+}
+h4 {
+	font-size: 1.2em;
+	margin: 16px 0 0 0;
+}
+h5 {
+	font-size: 0.965em;
+	margin: 14px 0 0 0;
+}
+
+/* Custom fonts. */
+html { font-size: 100%; }
+#sidebar {
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.89em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#references {
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.78em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#footermenu {
+    font-family: 'Oswald';
+    font-size: 0.845em;
+	letter-spacing: 0.0175em;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    color: rgba(255, 255, 255, 0.87);
+    
+    background: #1ea277;
+    
+    padding: 15px 7px 20px 7px;
+}
+p, blockquote, ol, ul {
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.89em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: justify;
+}
+sup {
+	vertical-align: super; /* vertical-align used to prevent the 
+                           /* superscript from automatically  */
+	line-height: 0;        /* increasing the line height.     */
+	font-size: 0.735em;
+}
+q:before { content: '\201C'; content: open-quote; }
+q:after { content: '\201D'; content: close-quote; }
+q q:before { content: '\2018'; content: open-quote; }
+q q:after { content: '\2019'; content: close-quote; }
+
+/* Style sheet for the content list outline on sidebar. */
+#contents ul { 
+    padding-left: 33px;
+    list-style-type: upper-latin;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.9725em;
+}
+#contents ul ol {
+    padding-left: 20px;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.9725em;
+}
+#contents ul ol ul { 
+    padding-left: 20px;
+    list-style-type: lower-latin;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.9725em;
+}
+#contents ul ol ul ul { 
+    padding-left: 20px;
+    list-style-type: lower-roman;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.9725em;
+}
+
+/* Blockquote hanging opening quote. */
+blockquote:before {
+	display: block;
+	height: 0;
+	content: '\201C';
+	margin-left: -0.7em;
+	font-style: italic;
+	font-size: 400%;
+	font-family: 'Georgia', 'Times New Roman', serif;
+	color: #999;
+}
+/* Multi-level quote fix in blockquotes. */
+blockquote q:before { content: '\2018'; content: open-quote; }
+blockquote q:after { content: '\2019'; content: close-quote; }
+blockquote q q:before { content: '\201C'; content: open-quote; }
+blockquote q q:after { content: '\201D'; content: close-quote; }
+
+/* Used for animating .gif only on hover. */
+#playonhover { background: url('final-images/congruent_pentagon.png'); }
+#playonhover:hover { background: url('final-images/Phenakistoscope.gif')}
+
+/* Used specifically to encase text blocks with <span> that <p> can't go around. */
+span.p_font {
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.89em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+span.oswald_font {
+    font-family: 'Oswald', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.89em;
+	letter-spacing: 0.045em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Used to move the references at the bottom of each page to a more visually appealing position. */
+ol.references {
+	padding-top: 0;
+	padding-left: 20px;
+	margin-top: 0;
+}
+
+/* Designed for use in the last paragraph to insert some well-needed padding. */
+p.last { margin-bottom: 21px; }
+
+/* Classes for <img> tags. */
+img {
+    max-width: 665px;
+}
+img.leftimg {
+	float: left;
+	margin: 12px 18px 12px 0;
+}
+img.rightimg {
+	float: right;
+	margin: 12px 0 12px 18px;
+}
+img.centerimg {
+    display: block;
+	margin: 12px auto 12px auto;
+}
+
+/* Stuff for link coloring. */
+a:link {
+	color: #009191;
+	text-decoration: none;
+}
+a:visited {
+	color: #A70092;
+	text-decoration: none;
+}
+a:hover {
+	color: #4C00A3;
+	text-decoration: none;
+}
+a:active {
+	color: #FF3100;
+	text-decoration: none;
+}
+/* Section nav link colorings. */
+#sectionnav a:link {
+	color: #515151;
+	text-decoration: none;
+}
+#sectionnav a:visited {
+	color: #515151;
+	text-decoration: none;
+}
+#sectionnav a:hover {
+	color: #1d1d1d;
+	text-decoration: none;
+}
+#sectionnav a:active {
+	color: #939393;
+	text-decoration: none;
+}
+/* Footer nav link colorings. */
+#footermenu a:link {
+	color: rgba(255, 255, 255, 0.87);
+	text-decoration: none;
+    border-bottom: 1px dotted;
+}
+#footermenu a:visited {
+	color: rgba(255, 255, 255, 0.87);
+	text-decoration: none;
+    border-bottom: 1px dotted;
+}
+#footermenu a:hover {
+	color: #fff;
+	text-decoration: none;
+    border-bottom: 1px solid;
+}
+#footermenu a:active {
+	color: #ffc400;
+	text-decoration: none;
+    border-bottom: 1px solid;
+}
+
+/* Footer: Increase padding-top to avoid contact with the  main text area. */
+footer { padding-top: 12px; }
+
+/* Footermenu: used to automatically increase space between the menu links. */
+#footermenu a {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Attempt to make the 2-column layout height equal. */
+#content { display: table; }
+#sidebar { display: table-cell; }
+#text { display: table-cell; }
+
+/* Sidebar stuff. */
+#sidebar {
+	width: 240px;
+    min-width: 240px;
+    padding-left: 24px;
+    z-index: -1;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+    background-color: hsl(0, 0%, 81%);
+    -webkit-box-shadow: -6px 0px 5px -2px rgba(0,0,0,0.06); /* The box shadow has been designed to */
+    -moz-box-shadow: -6px 0px 5px -2px rgba(0,0,0,0.06);    /* only render on the left side of the */
+    box-shadow: -6px 0px 5px -2px rgba(0,0,0,0.06);         /* box to avoid spillover off the      */
+                                                            /* wrapper edge.                       */
+}
+
+/* Sidebar content list styling. */
+#sidebar ul {
+	padding-left: 33px; 
+	list-style-type: upper-latin;
+}
+#sidebar ul ol {
+	padding-left: 21px;
+}
+#sidebar ul ol ul {
+	padding-left: 21px;
+	list-style-type: lower-latin;
+}
+#sidebar ul ol ul ul {
+	padding-left: 21px;
+	list-style-type: lower-roman;
+}
+
+/* Text container formatting. */
+#text {
+    width: 665px;
+    max-width: 642px;
+    padding: 0 27px 0 27px;
+}
+
+/* Section navigation style sheet. */
+#sectionnav {
+    margin-bottom: 20px;
+    width: 100%;
+
+    display: table;
+    border-collapse: collapse;
+    
+    font-family: 'Oswald', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.91em;
+    color: #515151;
+	letter-spacing: 0.045em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+    #previoussectionnav { 
+        width: 50%;
+        height: 63px;
+        display: table-cell; 
+        text-align: left; 
+        vertical-align: middle;
+        
+        padding: 10px 10px 10px 30px;
+        
+        border-style: solid solid solid none;
+        border-width: 1px;
+        border-color: #c7c7c7;
+    }
+    #nextsectionnav { 
+        width: 50%;
+        height: 63px;
+        display: table-cell; 
+        text-align: right;
+        vertical-align: middle;
+        
+        padding: 10px 30px 10px 10px;
+        
+        border-style: solid none solid solid;
+        border-width: 1px;
+        border-color: #c7c7c7;
+    }
+
+/* References at bottom of page for column text wrap. */
+#references {
+	padding: 3px 27px 3px 27px;
+	column-count: 2;
+	column-gap: 36px;
+	column-rule: thin solid #000000;
+	
+	-moz-column-count: 2;
+	-moz-column-gap: 36px;
+	-moz-column-rule: thin solid #000000;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 36px;
+	-webkit-column-rule: thin solid #000000;
+}

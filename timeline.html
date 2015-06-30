@@ -1,0 +1,236 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+	<!-- Header container. Welcome to Google! -->
+	<head>
+	
+		<!-- Meta and Title tags. -->
+		<title>TAoA: Culture</title>
+		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, 
+			Traditional, CGI, Duck and Cover, Gestalt">
+		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of 
+            animation..."> 
+		<meta name="author" content="Zachary Espiritu">
+        
+		<!-- External style sheet. -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+        <link rel="stylesheet" type="text/css" href="wrapper.css">
+        <link rel="stylesheet" type="text/css" href="print.css" media="print">
+        
+        <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
+        <link rel="icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
+		
+		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+		<!-- JQuery script CDN. -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Script for drop-down menu. -->
+		<script>
+		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+			var activeElement = $("#cssmenu>ul>li:first");
+
+			$("#cssmenu>ul>li").each(function() {
+				if ($(this).hasClass("active")) {
+					activeElement = $(this);
+				}
+			});
+
+		var posLeft = activeElement.position().left;
+		var elementWidth = activeElement.width();
+		posLeft = posLeft + elementWidth/2 -6;
+		if (activeElement.hasClass("has-sub")) {
+			posLeft -= 6;
+		}
+
+		$("#cssmenu #pIndicator").css("left", posLeft);
+		var element, leftPos, indicator = $("#cssmenu pIndicator");
+	
+		$("#cssmenu>ul>li").hover(function() {
+			element = $(this);
+			var w = element.width();
+			
+			if ($(this).hasClass("has-sub")) {
+				leftPos = element.position().left + w/2 - 12;
+			}
+			else {
+				leftPos = element.position().left + w/2 - 6;
+			}
+
+			$("#cssmenu #pIndicator").css("left", leftPos);
+		}
+		, function() {
+			$("#cssmenu #pIndicator").css("left", posLeft);
+		});
+
+
+		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+		$("#cssmenu>ul").children(".has-sub").each(function() {
+			var posLeftArrow = $(this).width();
+			posLeftArrow /= 2;
+			posLeftArrow -= 12;
+			$(this).find(".submenuArrow").css("left", posLeftArrow);
+
+		});
+
+		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+		$( "#menu-button" ).click(function(){
+    		if ($(this).parent().hasClass("open")) {
+    			$(this).parent().removeClass("open");
+    		}
+    		else {
+    			$(this).parent().addClass("open");
+    		}
+    	});
+		</script>
+
+	</head>
+	
+	<!-- Body container. -->
+	<body>
+	
+	<!-- Wrapper section to make everything look neat and tight. -->
+	<div id="wrapper">
+	
+        <header>
+            <h1>The Art of Animation</h1>
+        </header>
+
+		<!-- Menu content. -->
+        <nav role="navigation">
+            <div id="cssmenu">
+                <ul>
+				    <li class="active"><a href="index.html"><span>Home</span></a></li>
+				    <li class="has-sub"><a href="history.html"><span>History</span></a>
+				        <ul>
+				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                        </ul>
+                    </li>
+				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+				    <li><a href="culture.html"><span>Culture</span></a></li>
+				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                </ul>
+            </div>
+        </nav>
+		
+		<!-- Paragraph content. -->
+		<div id="content">
+		
+			<main id="text" role="main">
+				
+                <hgroup>
+                    <h2>Animation&rsquo;s Timeline</h2>
+                    <h3 id="timeline">Timeline</h3>
+                </hgroup>
+				
+                <div id="verticalline" style="width: 1px; height: 555px; position: absolute; margin-top: 22px; margin-left: 25px; background-color: #000;"></div>
+                    <ul>
+                        <li><span class="bold underline">1824:</span> Peter Mark Roget does research in physiology at the University of London, published in <cite>Persistence of Vision with Regard to Moving Objects</cite>. This book presented the idea that a succession of still images could create the appearance of motion.</li>
+                        <li><span class="bold underline">1832:</span> Joseph Plateau develops the phenakistiscope.</li>
+                        <li><span class="bold underline">1889:</span> Emile Reynaud (from France) patents the praxinoscope.</li>
+                        <li><span class="bold underline">1895:</span> The age of movie camera and projector begins. Experimentors discover they can stop the crank and restart it again to obtain special effects. With this, James Stuart Blackton creates <cite>The Enchanted Drawing</cite> in 1900.</li>
+                        <li><span class="bold underline">1907:</span> Emil&eacute; Cohl (from France) begins his animation career.</li>
+                        <li><span class="bold underline">1914:</span> Windsor McCay produces what is considered to be the first popular animation, <cite>Gertie the Dinosaur</cite>.</li>
+                        <li><span class="bold underline">1915:</span> John Bray patents the process of cel animation.</li>
+                        <li><span class="bold underline">1920:</span> Otto Mesmer creates the character of Felix the Cat.</li>
+                        <li><span class="bold underline">1928:</span> Walt Disney releases <cite>Steamboat Willie</cite>, resulting in the general consensus that cartoons are now seen as entertainment.</li>
+                        <li><span class="bold underline">1937:</span> Snow White is released at cost of $1.5 million.</li>
+                        <li><span class="bold underline">1938:</span> Fleischer Studios create Betty Boop and Popeye.</li>
+                        <li><span class="bold underline">1939:</span> Warner Bros create the characters of Porky Pig, Daffy Duck, and Bugs Bunny.</li>
+                        <li><span class="bold underline">1963:</span> University of Utah; Ed Catmull develops an animation scripting language and creates an animation of a smooth shaded hand via computer generation.</li>
+                        <li><span class="bold underline">1972:</span> Fred Parke creates first computer-generated facial animation.</li>
+                        <li><span class="bold underline">1982:</span> Tron becomes the first movie to use CGI effects.
+                        <li><span class="bold underline">1983:</span> Bill Reeves at Lucasfilm publishes techniques for modeling particle systems as demonstrated in <cite>Star Wars</cite>.</li>
+                        <li><span class="bold underline">1987:</span> John Lasseter at Pixar publishes a paper describing traditional animation principles.</li>
+                        <li><span class="bold underline">1993:</span> Chen and Williams at Apple publish a paper on view interpolation for 3D walkthroughs.</li>
+                        <li><span class="bold underline">1993:</span> Jurassic Park uses computer generated animation to create dinosaur models.</li>
+                        <li><span class="bold underline">1995:</span> And it all culminates into today&rsquo;s age of animation with the release of Toy Story, the first full-length three-dimensional CGI feature film.</li>
+                    </ul>
+
+                <!-- Leave '<p class="last"></p>' for padding purposes -->
+                <p class="last"></p>         
+                <nav id="sectionnav">
+                
+                    <div id="previoussectionnav">
+                        <a href="culture.html">
+                        <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>Previous: Cultural Usage</span>
+                        </a>
+                    </div>
+                    
+                    <div id="nextsectionnav">
+                    <a href="index.html">
+                        Back to Homepage&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa fa-home fa-2x pull-right"></i>
+                    </a>
+                    </div>
+                    
+                </nav>
+				
+			</main>
+            
+            <!-- Sidebar with pertinent links. -->
+            <!-- Sidebar with pertinent links. -->
+            <aside id="sidebar" role="complementary">
+                
+                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+                    <div id="contents">
+                        <!-- Insert an outline of the above article here. -->
+                        <ul>
+                            <li><a href="#timeline">Timeline</a></li>
+                        </ul>
+                    </div>
+                    
+            </aside>
+		
+		</div>
+		
+        <!-- Just a spacer. -->
+		<div id="thickrule"></div>
+		
+		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+		<footer role="contentinfo">
+				
+			<!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
+			<a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
+			
+			<section id="references">
+                <ol class="references">    
+					<li><span id="fn1">Pollard, Nancy. <q>Animation Timeline.</q> Brown University Department of Computer Science. Last modified September 25, 1998. Accessed May 16, 2014. <a href="http://cs.brown.edu/courses/cs229/animTimeline.html">http://cs.brown.edu/courses/cs229/animTimeline.html.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+				</ol>	
+			</section>
+			<br>
+			<!-- Footer menu with all the links. -->
+			<section id="footermenu" class="center">
+				
+                <small style="font-size: 100%;">
+                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                    &copy; 2014<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                </small>
+                
+				<nav role="navigation" style="padding-top: 6px;">
+					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+				</nav>
+				
+			</section>
+    
+		</footer>
+	
+	</div>
+		
+	</body>	
+	
+</html> 
