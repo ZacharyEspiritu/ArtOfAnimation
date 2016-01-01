@@ -2,265 +2,252 @@
 
 <html lang="en">
 
-	<!-- Header container. Welcome to Google! -->
-	<head>
-	
-		<!-- Meta and Title tags. -->
-		<title>TAoA: The Film Era</title>
-		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
-		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
-		<meta name="author" content="Zachary Espiritu">
-        
-		<!-- External style sheet. -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+    <!-- Header container. Welcome to Google! -->
+    <head>
+
+        <!-- Meta and Title tags. -->
+        <title>TAoA: The Film Era</title>
+        <meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
+        <meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
+        <meta name="author" content="Zachary Espiritu">
+
+        <!-- External style sheet. -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="cssmenu.css">
         <link rel="stylesheet" type="text/css" href="wrapper.css">
         <link rel="stylesheet" type="text/css" href="print.css" media="print">
-        
+
         <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
         <link rel="icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
         <link rel="shortcut icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
-		
-		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+
+        <!-- Imported fonts from GoogleFonts and FontAwesome. -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		
-		<!-- JQuery script CDN. -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
-		<!-- Script for drop-down menu. -->
-		<script>
-		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
-			var activeElement = $("#cssmenu>ul>li:first");
 
-			$("#cssmenu>ul>li").each(function() {
-				if ($(this).hasClass("active")) {
-					activeElement = $(this);
-				}
-			});
+        <!-- JQuery script CDN. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		var posLeft = activeElement.position().left;
-		var elementWidth = activeElement.width();
-		posLeft = posLeft + elementWidth/2 -6;
-		if (activeElement.hasClass("has-sub")) {
-			posLeft -= 6;
-		}
+        <!-- Script for drop-down menu. -->
+        <script>
+            $("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+            var activeElement = $("#cssmenu>ul>li:first");
 
-		$("#cssmenu #pIndicator").css("left", posLeft);
-		var element, leftPos, indicator = $("#cssmenu pIndicator");
-	
-		$("#cssmenu>ul>li").hover(function() {
-			element = $(this);
-			var w = element.width();
-			
-			if ($(this).hasClass("has-sub")) {
-				leftPos = element.position().left + w/2 - 12;
-			}
-			else {
-				leftPos = element.position().left + w/2 - 6;
-			}
+            $("#cssmenu>ul>li").each(function() {
+                if ($(this).hasClass("active")) {
+                    activeElement = $(this);
+                }
+            });
 
-			$("#cssmenu #pIndicator").css("left", leftPos);
-		}
-		, function() {
-			$("#cssmenu #pIndicator").css("left", posLeft);
-		});
+            var posLeft = activeElement.position().left;
+            var elementWidth = activeElement.width();
+            posLeft = posLeft + elementWidth/2 -6;
+            if (activeElement.hasClass("has-sub")) {
+                posLeft -= 6;
+            }
+
+            $("#cssmenu #pIndicator").css("left", posLeft);
+            var element, leftPos, indicator = $("#cssmenu pIndicator");
+
+            $("#cssmenu>ul>li").hover(function() {
+                element = $(this);
+                var w = element.width();
+
+                if ($(this).hasClass("has-sub")) {
+                    leftPos = element.position().left + w/2 - 12;
+                }
+                else {
+                    leftPos = element.position().left + w/2 - 6;
+                }
+
+                $("#cssmenu #pIndicator").css("left", leftPos);
+            }
+                                      , function() {
+                $("#cssmenu #pIndicator").css("left", posLeft);
+            });
 
 
-		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
-		$("#cssmenu>ul").children(".has-sub").each(function() {
-			var posLeftArrow = $(this).width();
-			posLeftArrow /= 2;
-			posLeftArrow -= 12;
-			$(this).find(".submenuArrow").css("left", posLeftArrow);
+            $("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+            $("#cssmenu>ul").children(".has-sub").each(function() {
+                var posLeftArrow = $(this).width();
+                posLeftArrow /= 2;
+                posLeftArrow -= 12;
+                $(this).find(".submenuArrow").css("left", posLeftArrow);
 
-		});
+            });
 
-		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
-		$( "#menu-button" ).click(function(){
-    		if ($(this).parent().hasClass("open")) {
-    			$(this).parent().removeClass("open");
-    		}
-    		else {
-    			$(this).parent().addClass("open");
-    		}
-    	});
-		</script>
+            ("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+            $( "#menu-button" ).click(function(){
+                if ($(this).parent().hasClass("open")) {
+                    $(this).parent().removeClass("open");
+                }
+                else {
+                    $(this).parent().addClass("open");
+                }
+            });
+        </script>
+    </head>
 
-	</head>
-	
-	<!-- Body container. -->
-	<body>
-	
-	<!-- Wrapper section to make everything look neat and tight. -->
-	<div id="wrapper">
-	
-        <header>
-            <h1>The Art of Animation</h1>
-        </header>
+    <!-- Body container. -->
+    <body>
 
-		<!-- Menu content. -->
-        <nav role="navigation">
-            <div id="cssmenu">
-                <ul>
-				    <li class="active"><a href="index.html"><span>Home</span></a></li>
-				    <li class="has-sub"><a href="history.html"><span>History</span></a>
-				        <ul>
-				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
-                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
-                        </ul>
-                    </li>
-				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
-				    <li><a href="culture.html"><span>Culture</span></a></li>
-				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
-                </ul>
-            </div>
-        </nav>
-		
-		<!-- Paragraph content. -->
-		<div id="content">
-		
-			<main id="text" role="main">
-				
-                <hgroup>
-                    <h2>The Film Era of Animation</h2>
-                    <h3 id="overview">Overview</h3>
-                </hgroup>
-				
-				<p>After the rise of mechanical methods as seen in the previous section, a number of technologies suddenly took hold in the hearts of the public in the interest of supporting and developing animation. This <q>film era,</q> as it came to be aptly named, would forever change the course of history for animation, and even the now-developing practice of cinematography in general.</p>
-				
-				<h3 id="silent-age">The Silent Age of Animation</h3>
-                <p>The first film that was recorded on standard picture film and included animated sequences was the 1900 film, The Enchanted Drawing..<sup><a href="#fn1" id="ref1">[1]</a></sup> Produced by Thomas A. Edison and directed by and starring J. Stuart Blackton, the silent film depicts a cartoonist sketching an exaggerated portrait of an elderly gentleman. After completing the sketch, the artist rapidly draws a sketch of a bottle of wine and a goblet, and, to the surprise of all, actually removes them from the paper and pours wine out of the bottle into the glass. More surprising effects follow this, giving a clever example of stop motion animation and early visual effects found in films
-                <img src="final-images/fantasmagorie.png" class="leftimg" style="max-width: 378px;">
-                <p>In 1908, the French artist Emile Cohl created the first film using what largely came to be known as <q>traditional animation</q>&mdash;<cite>Fantasmagorie</cite>. Without much narrative structure, the 2-minute film largely consists of a stick figure moving about and encountering all manners of morphing objects, such as a wine bottle that suddenly transforms into a flower. Cohl borrowed many techniques from Blackton to achieve the effects shown. Fantasmagorie is considered by film historians to be the first animated cartoon.<sup><a href="#fn2" id="ref2">[2]</a></sup></p>
-                <p>The 1910&rsquo;s came with the rise of animated short films, or cartoons. Cartoons became an industry on their own, and cartoon shorts were produced for showing in movie theaters. During this time, the cel animation process was created by John Randolph Bray and Earl Hurd; it allowed for the selective duplication of parts of frames to be transferred to another frame, saving time and labor. This process became a keystone part of the animation industry for the rest of the decade.<sup><a href="#fn3" id="ref3">[3]</a></sup></p>
-                
-                <h3 id="early-approaches">The Golden Age of Animation</h3>
-                <blockquote cite="http://tvtropes.org/pmwiki/pmwiki.php/Quotes/TheGoldenAgeOfAnimation">
-					<p>By 1927-1928, audiences would groan when a cartoon came on. Animation had worn out its welcome. The novelty was gone. If sound hadn't come in, the cartoon would have vanished.&rdquo;</p>
-					<p>&#8212; Shamus Culhane, on why <cite>Steamboat Willie</cite> was such an important film for animation</p>
-				</blockquote>
-                <p>The <q>Golden Age of Animation</q> is a period in animation history that began with the success of <cite>Steamboat Willie</cite> by Walt Disney Cartoons and included numerous animation studios&rsquo; rise to prominence (such as MGM and Warner Bros.). It began to fade out in the late 1950&rsquo;s when theatrical animated shorts began to lose ground to the recently popularized medium of television animation.<sup><a href="#fn4" id="ref4">[4]</a></sup></p>
-				
-                <img src="final-images/modern-mickey.png" class="rightimg" style="max-width: 380px; margin-top: -5px;">
-                <p>Many memorable and instantly recognizable characters emerged from this period, including Mickey Mouse, Bugs Bunny, Mr. Magoo, and Tom and Jerry, among others who haven&rsquo;t survived along the way. Feature-length adaptations also began during this period, giving rise to classics such as <cite>Snow White and the Seven Dwarfs</cite>, <cite>Pinocchio</cite>, <cite>Fantasia</cite>, <cite>Dumbo</cite>, and <cite>Bambi</cite>.<sup><a href="#fn5" id="ref5">[5]</a></sup></p>
-                
+        <!-- Wrapper section to make everything look neat and tight. -->
+        <div id="wrapper">
+
+            <header>
+                <h1>The Art of Animation</h1>
+            </header>
+
+            <!-- Menu content. -->
+            <nav role="navigation">
+                <div id="cssmenu">
+                    <ul>
+                        <li class="active"><a href="index.html"><span>Home</span></a></li>
+                        <li class="has-sub"><a href="history.html"><span>History</span></a>
+                            <ul>
+                                <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                                <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+                        <li><a href="culture.html"><span>Culture</span></a></li>
+                        <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Paragraph content. -->
+            <div id="content">
+
+                <main id="text" role="main">
+
+                    <hgroup>
+                        <h2>The Film Era of Animation</h2>
+                        <h3 id="overview">Overview</h3>
+                    </hgroup>
+
+                    <p>After the rise of mechanical methods as seen in the previous section, a number of technologies suddenly took hold in the hearts of the public in the interest of supporting and developing animation. This <q>film era,</q> as it came to be aptly named, would forever change the course of history for animation, and even the now-developing practice of cinematography in general.</p>
+
+                    <h3 id="silent-age">The Silent Age of Animation</h3>
+                    <p>The first film that was recorded on standard picture film and included animated sequences was the 1900 film, The Enchanted Drawing..<sup><a href="#fn1" id="ref1">[1]</a></sup> Produced by Thomas A. Edison and directed by and starring J. Stuart Blackton, the silent film depicts a cartoonist sketching an exaggerated portrait of an elderly gentleman. After completing the sketch, the artist rapidly draws a sketch of a bottle of wine and a goblet, and, to the surprise of all, actually removes them from the paper and pours wine out of the bottle into the glass. More surprising effects follow this, giving a clever example of stop motion animation and early visual effects found in films
+                        <img src="final-images/fantasmagorie.png" class="leftimg" style="max-width: 378px;">
+                    <p>In 1908, the French artist Emile Cohl created the first film using what largely came to be known as <q>traditional animation</q>&mdash;<cite>Fantasmagorie</cite>. Without much narrative structure, the 2-minute film largely consists of a stick figure moving about and encountering all manners of morphing objects, such as a wine bottle that suddenly transforms into a flower. Cohl borrowed many techniques from Blackton to achieve the effects shown. Fantasmagorie is considered by film historians to be the first animated cartoon.<sup><a href="#fn2" id="ref2">[2]</a></sup></p>
+                    <p>The 1910&rsquo;s came with the rise of animated short films, or cartoons. Cartoons became an industry on their own, and cartoon shorts were produced for showing in movie theaters. During this time, the cel animation process was created by John Randolph Bray and Earl Hurd; it allowed for the selective duplication of parts of frames to be transferred to another frame, saving time and labor. This process became a keystone part of the animation industry for the rest of the decade.<sup><a href="#fn3" id="ref3">[3]</a></sup></p>
+
+                    <h3 id="early-approaches">The Golden Age of Animation</h3>
+                    <blockquote cite="http://tvtropes.org/pmwiki/pmwiki.php/Quotes/TheGoldenAgeOfAnimation">
+                        <p>By 1927-1928, audiences would groan when a cartoon came on. Animation had worn out its welcome. The novelty was gone. If sound hadn't come in, the cartoon would have vanished.&rdquo;</p>
+                        <p>&#8212; Shamus Culhane, on why <cite>Steamboat Willie</cite> was such an important film for animation</p>
+                    </blockquote>
+                    <p>The <q>Golden Age of Animation</q> is a period in animation history that began with the success of <cite>Steamboat Willie</cite> by Walt Disney Cartoons and included numerous animation studios&rsquo; rise to prominence (such as MGM and Warner Bros.). It began to fade out in the late 1950&rsquo;s when theatrical animated shorts began to lose ground to the recently popularized medium of television animation.<sup><a href="#fn4" id="ref4">[4]</a></sup></p>
+
+                    <img src="final-images/modern-mickey.png" class="rightimg" style="max-width: 380px; margin-top: -5px;">
+                    <p>Many memorable and instantly recognizable characters emerged from this period, including Mickey Mouse, Bugs Bunny, Mr. Magoo, and Tom and Jerry, among others who haven&rsquo;t survived along the way. Feature-length adaptations also began during this period, giving rise to classics such as <cite>Snow White and the Seven Dwarfs</cite>, <cite>Pinocchio</cite>, <cite>Fantasia</cite>, <cite>Dumbo</cite>, and <cite>Bambi</cite>.<sup><a href="#fn5" id="ref5">[5]</a></sup></p>
+
                     <h4 id="sound">The Importance of Sound</h4>
                     <p>Prior to 1928, animation was just a novelty; a very selective amount of theaters carried animated short films. Demand simply wasn&rsquo;t high for them; <cite>Felix the Cat</cite> and <cite>Out of the Inkwell</cite> were the only series of prominence during this period, and even they were starting to lose popular interest by the end of the twenties. However, expanding technologies for animation started to increase the quality of cartoons during this time period.</p>
                     <img src="final-images/out-of-inkwell.jpg" class="leftimg" style="max-width: 326px;">
                     <p>In 1924, the creator of the <cite>Inkwell</cite> series, Max Fleischer, was experimenting with the incorporation of sound through his groundbreaking animation series <cite>Song Cartunes</cite>. The audio was unreliable; there was no way of synchronizing the animations with the sound (synchronized sound wasn&rsquo;t developed until 1926), but it is believed by film historians to be the first sound animation. This idea of incorporating audio into cartoons slowly spread throughout the industry, and eventually became to be a staple of animation in the long run.</p>
                     <p>Early cartoons were very musically oriented. As animation was a very expensive process, cartoons were simply drawn, and in order to remain profitable, studios rushed the production of cartoons to release them as quickly as possible. Using public domain music, songs were able to be quickly added and timed to the animation.</p>
-                
+
                     <h4 id="color">The Rise of Color</h4>
                     <p>The concept of color animation had been around for a while as well&mdash;a very few amount of cartoons had been initially hand-colored in the past. It wasn&rsquo;t until the release of the 1930 film The King of Jazz that the first cartoon to make use of the Technicolor process appeared. A few years later, Walt Disney Cartoons came out with its brightly colored Silly Symphonies series&mdash;however, many studios like Warner Bros. and Terrytoons would continue using standard black-and-white processes until many years later.</p>
-                    
+
                     <h4 id="walt-disney">Walt Disney&rsquo;s Impact</h4>
                     <img src="final-images/walt-disney-drawing.jpg" class="rightimg" style="max-width: 333px;">
                     <p>But, as stated by <cite><a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGoldenAgeOfAnimation" target="_blank">TVTropes.org</a></cite>, <q>regardless of the rising quality of cartoons, they were still relegated to be merely filler material that played before the main attractions of feature length films</q>. Walt Disney set out to change that notion, and thus came Disney&rsquo;s next groundbreaking step in animation&mdash;in 1934, Disney began work on the first feature-length animation motion picture: <cite>Snow White and the Seven Dwarfs</cite>. While such an idea was nothing new to foreign countries, this was the first one to have both sound and color, and had extremely good art quality for the time period. The film was an instant success, receiving critical acclaim from critics and audiences and was the most financially successful motion picture ever created.<sup><a href="#fn6" id="ref6">[6]</a></sup></p>
-                    				
-				<h3 id="in-brief">In Brief</h3>
-				<ul>
-				<li>The <q>film era</q> of animation would forever change the course of history that cinematography was to take hold of.</li>
-				<li>The silent age of animation generated numerous techniques integral to the art of hand-drawn animation.</li>
-					<ul>
-					<li>Some of these same mechanics are found today in things like video editing, camera tricks, etc.</li>
-					</ul>
-				<li>The golden age of animation brought about much change in movies and animation:</li>
-					<ul>
-					<li>Sound was soon found to be integral to the development process, creating more realistic and atmospheric stories that appealed to watchers.</li>
-					<li>Color did the same.</li>
-					<li>The rise of Walt Disney as an animator changed the public&rsquo;s opinion of animated sequences&mdash;they were now considered to be full-featured spectacles.</li>
-					</ul>
-                </ul>
-                
-                <nav id="sectionnav">
-                
-                    <div id="previoussectionnav">
-                        <a href="before-film.html">
-                        <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span>Previous: Animation Before Film</span>
-                        </a>
-                    </div>
-                    
-                    <div id="nextsectionnav">
-                    <a href="modern-techniques.html">
-                        Next: Modern Techniques&nbsp;&nbsp;&nbsp;&nbsp;
-                        <i class="fa fa-chevron-right fa-2x pull-right"></i>
-                    </a>
-                    </div>
-                    
-                </nav>
-                
-			</main>
-            
-            <!-- Sidebar with pertinent links. -->
-            <aside id="sidebar" role="complementary">
-                
-                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+
+                    <h3 id="in-brief">In Brief</h3>
+                    <ul>
+                        <li>The <q>film era</q> of animation would forever change the course of history that cinematography was to take hold of.</li>
+                        <li>The silent age of animation generated numerous techniques integral to the art of hand-drawn animation.</li>
+                        <ul>
+                            <li>Some of these same mechanics are found today in things like video editing, camera tricks, etc.</li>
+                        </ul>
+                        <li>The golden age of animation brought about much change in movies and animation:</li>
+                        <ul>
+                            <li>Sound was soon found to be integral to the development process, creating more realistic and atmospheric stories that appealed to watchers.</li>
+                            <li>Color did the same.</li>
+                            <li>The rise of Walt Disney as an animator changed the public&rsquo;s opinion of animated sequences&mdash;they were now considered to be full-featured spectacles.</li>
+                        </ul>
+                    </ul>
+
+                    <nav id="sectionnav">
+                        <div id="previoussectionnav">
+                            <a href="before-film.html">
+                                <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>Previous: Animation Before Film</span>
+                            </a>
+                        </div>
+
+                        <div id="nextsectionnav">
+                            <a href="modern-techniques.html">
+                                Next: Modern Techniques&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-chevron-right fa-2x pull-right"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </main>
+
+                <!-- Sidebar with pertinent links. -->
+                <aside id="sidebar" role="complementary">
+                    <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
                     <div id="contents">
                         <!-- Insert an outline of the above article here. -->
                         <ul>
-                        <li><a href="#overview">Overview</a></li>
-				        <li><a href="#silent-age">The Silent Age of Animation</a></li>
-                        <li><a href="#golden-age">The Golden Age of Animation</a></li>
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#silent-age">The Silent Age of Animation</a></li>
+                            <li><a href="#golden-age">The Golden Age of Animation</a></li>
                             <ol>
-                            <li><a href="#sound">The Importance of Sound</a></li>
-                            <li><a href="#color">The Rise of Color</a></li>
-                            <li><a href="#walt-disney">Walt Disney&rsquo;s Impact</a></li>
+                                <li><a href="#sound">The Importance of Sound</a></li>
+                                <li><a href="#color">The Rise of Color</a></li>
+                                <li><a href="#walt-disney">Walt Disney&rsquo;s Impact</a></li>
                             </ol>
-                        <li><a href="#in-brief">In Brief</a></li>
+                            <li><a href="#in-brief">In Brief</a></li>
                         </ul>
                     </div>
-                    
-            </aside>
-		
-		</div>
-		
-        <!-- Just a spacer. -->
-		<div id="thickrule"></div>
-		
-		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
-		<footer role="contentinfo">
-				
-			<!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
-			<a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
-			
-			<section id="references">
-                <ol class="references">    
-					<li><span id="fn1">Blackton, J. Stuart. <cite>The Enchanted Drawing</cite>, 1900. The Library of Congress. Accessed January 14, 2014. <a href="http://memory.loc.gov/mbrs/animp/1592t.gif.">http://memory.loc.gov/mbrs/animp/1592t.gif.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
-					<li><span id="fn2"><cite>Fantasmagorie</cite>. Film. Directed by &Eacute;mile Cohl. s.l.: Soci&eacute;t&eacute; des Etablissements L. Gaumont, 1908.<a href="#ref2" title="Jump back to place in the text."> &#8617;</a></span><br></li>
-					<li><span id="fn3"><em>Webopedia</em>.  s.v. <q>cel animation.</q> Accessed January 10, 2014. <a href="http://www.webopedia.com/TERM/C/cel_animation.html">http://www. webopedia.com/TERM/C/cel_animation.html</a><a href="#ref3" title="Jump back to place in the text."> &#8617;</a></span><br></li>	
-					<li><span id="fn4">Jackson, Kathy M. 2005. <q>Living life inside the lines: Tales from the golden age of animation.</q> <cite>The Journal of American Culture</cite> 28, no. 4: 446-447. <a href="http://search.proquest.com/docview/200571487?accountid=41494">http://search. proquest.com/docview/200571487?accountid=41494.</a><a href="#ref4" title="Jump back to place in the text."> &#8617;</a></span><br></li>	
-					<li><span id="fn5">Lee, Lavalle, James T. Nethery, and Les Carpenter. <q>History.</q> Traditional Animation. Accessed January 14, 2014. <a href="http://www.traditionalanimation.com/animation-library/history/">http://www.traditionalanimation.com/ animation-library/history/.</a><a href="#ref5" title="Jump back to place in the text."> &#8617;</a></span><br></li>
-					<li><span id="fn6">TV Tropes Foundation, LLC. <q>The Golden Age of Animation.</q> TV Tropes. Accessed January 14, 2014. <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGoldenAgeOfAnimation.">http://tvtropes.org/pmwiki/pmwiki.php/Main/ TheGoldenAgeOfAnimation.</a><a href="#ref6" title="Jump back to place in the text."> &#8617;</a></span><br></li>
-				</ol>	
-			</section>
-			<br>
-			<!-- Footer menu with all the links. -->
-			<section id="footermenu" class="center">
-				
-                <small style="font-size: 100%;">
-                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
-                    &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
-                </small>
-                
-				<nav role="navigation" style="padding-top: 6px;">
-					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
-				</nav>
-				
-			</section>
-    
-		</footer>
-	
-	</div>
-		
-	</body>	
-	
+                </aside>
+            </div>
+
+            <!-- Just a spacer. -->
+            <div id="thickrule"></div>
+
+            <!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+            <footer role="contentinfo">
+
+                <!-- References that only apply to said page. See References for full list. Leave <b>References</b><br> out of the div so the column layout allows for it. -->
+                <a href="references.html"><span class="oswald_font" style="font-size: 0.85em; padding-left: 27px;">References</span></a><br>
+
+                <section id="references">
+                    <ol class="references">    
+                        <li><span id="fn1">Blackton, J. Stuart. <cite>The Enchanted Drawing</cite>, 1900. The Library of Congress. Accessed January 14, 2014. <a href="http://memory.loc.gov/mbrs/animp/1592t.gif.">http://memory.loc.gov/mbrs/animp/1592t.gif.</a><a href="#ref1" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                        <li><span id="fn2"><cite>Fantasmagorie</cite>. Film. Directed by &Eacute;mile Cohl. s.l.: Soci&eacute;t&eacute; des Etablissements L. Gaumont, 1908.<a href="#ref2" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                        <li><span id="fn3"><em>Webopedia</em>.  s.v. <q>cel animation.</q> Accessed January 10, 2014. <a href="http://www.webopedia.com/TERM/C/cel_animation.html">http://www. webopedia.com/TERM/C/cel_animation.html</a><a href="#ref3" title="Jump back to place in the text."> &#8617;</a></span><br></li>	
+                        <li><span id="fn4">Jackson, Kathy M. 2005. <q>Living life inside the lines: Tales from the golden age of animation.</q> <cite>The Journal of American Culture</cite> 28, no. 4: 446-447. <a href="http://search.proquest.com/docview/200571487?accountid=41494">http://search. proquest.com/docview/200571487?accountid=41494.</a><a href="#ref4" title="Jump back to place in the text."> &#8617;</a></span><br></li>	
+                        <li><span id="fn5">Lee, Lavalle, James T. Nethery, and Les Carpenter. <q>History.</q> Traditional Animation. Accessed January 14, 2014. <a href="http://www.traditionalanimation.com/animation-library/history/">http://www.traditionalanimation.com/ animation-library/history/.</a><a href="#ref5" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                        <li><span id="fn6">TV Tropes Foundation, LLC. <q>The Golden Age of Animation.</q> TV Tropes. Accessed January 14, 2014. <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGoldenAgeOfAnimation.">http://tvtropes.org/pmwiki/pmwiki.php/Main/ TheGoldenAgeOfAnimation.</a><a href="#ref6" title="Jump back to place in the text."> &#8617;</a></span><br></li>
+                    </ol>	
+                </section>
+                <br>
+                <!-- Footer menu with all the links. -->
+                <section id="footermenu" class="center">
+                    <small style="font-size: 100%;">
+                        <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                        &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                    </small>
+
+                    <nav role="navigation" style="padding-top: 6px;">
+                        <a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+                    </nav>
+                </section>
+            </footer>
+        </div>
+    </body>	
 </html> 

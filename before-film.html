@@ -1,97 +1,95 @@
 <!DOCTYPE html5>
-
 <html lang="en">
 
-	<!-- Header container. Welcome to Google! -->
-	<head>
-	
-		<!-- Meta and Title tags. -->
-		<title>TAoA: Before Film</title>
-		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
-		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
-		<meta name="author" content="Zachary Espiritu">
-        
-		<!-- External style sheet. -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+    <!-- Header container. Welcome to Google! -->
+    <head>
+
+        <!-- Meta and Title tags. -->
+        <title>TAoA: Before Film</title>
+        <meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
+        <meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
+        <meta name="author" content="Zachary Espiritu">
+
+        <!-- External style sheet. -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="cssmenu.css">
         <link rel="stylesheet" type="text/css" href="wrapper.css">
         <link rel="stylesheet" type="text/css" href="print.css" media="print">
-        
+
         <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
         <link rel="icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
         <link rel="shortcut icon" href="/zespiritu17/final-images/icon/favicon.ico" type="image/x-icon"/>
-		
-		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+
+        <!-- Imported fonts from GoogleFonts and FontAwesome. -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		
-		<!-- JQuery script CDN. -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
-		<!-- Script for drop-down menu. -->
-		<script>
-		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
-			var activeElement = $("#cssmenu>ul>li:first");
 
-			$("#cssmenu>ul>li").each(function() {
-				if ($(this).hasClass("active")) {
-					activeElement = $(this);
-				}
-			});
+        <!-- JQuery script CDN. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		var posLeft = activeElement.position().left;
-		var elementWidth = activeElement.width();
-		posLeft = posLeft + elementWidth/2 -6;
-		if (activeElement.hasClass("has-sub")) {
-			posLeft -= 6;
-		}
+        <!-- Script for drop-down menu. -->
+        <script>
+            $("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+            var activeElement = $("#cssmenu>ul>li:first");
 
-		$("#cssmenu #pIndicator").css("left", posLeft);
-		var element, leftPos, indicator = $("#cssmenu pIndicator");
-	
-		$("#cssmenu>ul>li").hover(function() {
-			element = $(this);
-			var w = element.width();
-			
-			if ($(this).hasClass("has-sub")) {
-				leftPos = element.position().left + w/2 - 12;
-			}
-			else {
-				leftPos = element.position().left + w/2 - 6;
-			}
+            $("#cssmenu>ul>li").each(function() {
+                if ($(this).hasClass("active")) {
+                    activeElement = $(this);
+                }
+            });
 
-			$("#cssmenu #pIndicator").css("left", leftPos);
-		}
-		, function() {
-			$("#cssmenu #pIndicator").css("left", posLeft);
-		});
+            var posLeft = activeElement.position().left;
+            var elementWidth = activeElement.width();
+            posLeft = posLeft + elementWidth/2 -6;
+            if (activeElement.hasClass("has-sub")) {
+                posLeft -= 6;
+            }
+
+            $("#cssmenu #pIndicator").css("left", posLeft);
+            var element, leftPos, indicator = $("#cssmenu pIndicator");
+
+            $("#cssmenu>ul>li").hover(function() {
+                element = $(this);
+                var w = element.width();
+
+                if ($(this).hasClass("has-sub")) {
+                    leftPos = element.position().left + w/2 - 12;
+                }
+                else {
+                    leftPos = element.position().left + w/2 - 6;
+                }
+
+                $("#cssmenu #pIndicator").css("left", leftPos);
+            }
+                                      , function() {
+                $("#cssmenu #pIndicator").css("left", posLeft);
+            });
 
 
-		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
-		$("#cssmenu>ul").children(".has-sub").each(function() {
-			var posLeftArrow = $(this).width();
-			posLeftArrow /= 2;
-			posLeftArrow -= 12;
-			$(this).find(".submenuArrow").css("left", posLeftArrow);
+            $("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+            $("#cssmenu>ul").children(".has-sub").each(function() {
+                var posLeftArrow = $(this).width();
+                posLeftArrow /= 2;
+                posLeftArrow -= 12;
+                $(this).find(".submenuArrow").css("left", posLeftArrow);
 
-		});
+            });
 
-		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
-		$( "#menu-button" ).click(function(){
-    		if ($(this).parent().hasClass("open")) {
-    			$(this).parent().removeClass("open");
-    		}
-    		else {
-    			$(this).parent().addClass("open");
-    		}
-    	});
-		</script>
+            ("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+            $( "#menu-button" ).click(function(){
+                if ($(this).parent().hasClass("open")) {
+                    $(this).parent().removeClass("open");
+                }
+                else {
+                    $(this).parent().addClass("open");
+                }
+            });
+        </script>
+    </head>
 
-	</head>
-	
-	<!-- Body container. -->
-	<body>
-	
+    <!-- Body container. -->
+    <body>
+
         <!-- Wrapper section to make everything look neat and tight. -->
         <div id="wrapper">
 
@@ -129,97 +127,91 @@
 
                     <p>From the <q>zoetrope</q> to hand-drawn films, animation has gone a long way from where it had once begun. Before the invention of film, evidence of the depiction of figures in motion existed as far back as the Paleolithic era. In more modern times, numerous devices which successfully displayed animated images were introduced well before the advent of the motion picture. The majority of these devices could only be viewed by a single person at a time, and for this reason they were considered novelties rather than being a foundation for a large-scale entertainment industry.<sup><a href="#fn2" id="ref2">[2]</a></sup> Changing technologies have made animated films on a larger scale more feasible in our current age; however, many of these devices utilized the basic principals of animation that are still in place today.</p>
 
-                        <h4 id="early-approaches">Early Approaches</h4>
-                        <p><img src="final-images/egyptian-mural-motion.jpg" class="rightimg" style="height: 204px">As stated in the introduction, evidence of artistic interest in depicting figures in motion can be seen in as early as Paleolithic cave paintings. Animals in these paintings were often depicted with multiple sets of legs in superimposed positions. While it could have been simply a correction to the drawing (considering they had no means of erasing), it is very likely that these were very early attempts to convey motion.<sup><a href="#fn3" id="ref3">[3]</a></sup> More evidence of motion can be found in Egyptian murals, such as the one located at the Beni Hassan cemetery, which includes a sequence of images in temporal succession.<sup><a href="#fn4" id="ref4">[4]</a></sup></p>
-                        <p>It's important to note that, even though some of these early examples may appear similar to an animated series of drawings, the lack of equipment to show them in motion causes them to fall short of being true animation. However, the process of illustrating the passage of time by putting images in a chronological order has proved itself to be one of the most important steps in the development of animation, making such instances of this practice worth mentioning.</p>
+                    <h4 id="early-approaches">Early Approaches</h4>
+                    <p><img src="final-images/egyptian-mural-motion.jpg" class="rightimg" style="height: 204px">As stated in the introduction, evidence of artistic interest in depicting figures in motion can be seen in as early as Paleolithic cave paintings. Animals in these paintings were often depicted with multiple sets of legs in superimposed positions. While it could have been simply a correction to the drawing (considering they had no means of erasing), it is very likely that these were very early attempts to convey motion.<sup><a href="#fn3" id="ref3">[3]</a></sup> More evidence of motion can be found in Egyptian murals, such as the one located at the Beni Hassan cemetery, which includes a sequence of images in temporal succession.<sup><a href="#fn4" id="ref4">[4]</a></sup></p>
+                    <p>It's important to note that, even though some of these early examples may appear similar to an animated series of drawings, the lack of equipment to show them in motion causes them to fall short of being true animation. However, the process of illustrating the passage of time by putting images in a chronological order has proved itself to be one of the most important steps in the development of animation, making such instances of this practice worth mentioning.</p>
 
                     <h3 id="inventions">Devices and Inventions</h3>
                     <p>Numerous devices which successfully displayed animated images were introduced well before the advent of the motion picture. These devices were used to entertain, amaze and sometimes even frighten people. The majority of these devices didn't project their images and accordingly could only be viewed by a single person at any one time. For this reason, they were considered toys rather than being a large scale entertainment industry like later animation. This caused them to be unable to gain much popularity during this time; however, many of these devices are still built by and for film students in the interest of teaching the basic principles of animation.</p>
 
-                        <h4 id="magic-lantern">The Magic Lantern (c. 1650)</h4>
-                        <img src="final-images/Magic_Lantern.png" class="leftimg" style="max-height: 215px"><p>The earliest known predecessor of the modern day projector is the <q>magic lantern.</q> Widely believed to have been originally developed by Christiann Huygens in the late 1650&rsquo;s, it was able to project images onto an adjacent flat surface using light shone through hand-painted or translucent glass slides.<sup><a href="#fn5" id="ref5">[5]</a></sup> It was often used to project demonic, frightening images in order to convince people that they were witnessing the supernatural. Some slides for the lanterns contained moving parts, allowing a skilled projectionist to use slides with images of successive actions to make the image appear to move, making the magic lantern the earliest known example of projected animation.<sup><a href="#fn6" id="ref6">[6]</a></sup></p>
+                    <h4 id="magic-lantern">The Magic Lantern (c. 1650)</h4>
+                    <img src="final-images/Magic_Lantern.png" class="leftimg" style="max-height: 215px"><p>The earliest known predecessor of the modern day projector is the <q>magic lantern.</q> Widely believed to have been originally developed by Christiann Huygens in the late 1650&rsquo;s, it was able to project images onto an adjacent flat surface using light shone through hand-painted or translucent glass slides.<sup><a href="#fn5" id="ref5">[5]</a></sup> It was often used to project demonic, frightening images in order to convince people that they were witnessing the supernatural. Some slides for the lanterns contained moving parts, allowing a skilled projectionist to use slides with images of successive actions to make the image appear to move, making the magic lantern the earliest known example of projected animation.<sup><a href="#fn6" id="ref6">[6]</a></sup></p>
 
-                        <h4 id="thaumatrope">Thaumatrope (1824)</h4>
-                        <p>Much later after the magic lantern came the <q>thaumatrope,</q> an optical toy found mainly during the Victorian Era.<sup><a href="#fn7" id="ref7">[7]</a></sup> The invention of the thaumatrope is credited to the astronomer Sir John Hershel; however, a well-known London physicist, Dr. John Ayrton Paris, was the one responsible for the popularity of this toy. A thaumatrope is a small disc held at the ends with string with an image drawn on each side. The images are drawn in such a way that, when the disc is spun, the two images appear to become superimposed.<sup><a href="#fn8" id="ref8">[8]</a></sup>  While the thaumatrope did not produce animated scenes (as the two merging images became simply a continuous, yet static image), it demonstrated the idea of <q>persistence of vision</q> (as theorized by Gestalt psychologists), where the human eye perceives images roughly 1/20 of a second after the object is gone. As the thaumatrope spins, the quickly flickering images seem to blend together, and the human eye perceives the action as a continuous movement.<sup><a href="#fn9" id="ref9">[9]</a></sup></p>
+                    <h4 id="thaumatrope">Thaumatrope (1824)</h4>
+                    <p>Much later after the magic lantern came the <q>thaumatrope,</q> an optical toy found mainly during the Victorian Era.<sup><a href="#fn7" id="ref7">[7]</a></sup> The invention of the thaumatrope is credited to the astronomer Sir John Hershel; however, a well-known London physicist, Dr. John Ayrton Paris, was the one responsible for the popularity of this toy. A thaumatrope is a small disc held at the ends with string with an image drawn on each side. The images are drawn in such a way that, when the disc is spun, the two images appear to become superimposed.<sup><a href="#fn8" id="ref8">[8]</a></sup>  While the thaumatrope did not produce animated scenes (as the two merging images became simply a continuous, yet static image), it demonstrated the idea of <q>persistence of vision</q> (as theorized by Gestalt psychologists), where the human eye perceives images roughly 1/20 of a second after the object is gone. As the thaumatrope spins, the quickly flickering images seem to blend together, and the human eye perceives the action as a continuous movement.<sup><a href="#fn9" id="ref9">[9]</a></sup></p>
 
-                        <img src="final-images/Phenakistoscope.gif" class="rightimg" style="max-height: 253px">
-                        <h4 id="phenakistoscope">Phenakistoscope (1831)</h4>
-                        <p>After the success of the <q>thaumatrope,</q> Belgian physicist Joseph Plateau introduced the <q>phenakistoscope</q> in 1832. The phenakistoscope utilized the same persistence of motion principle as the thaumatrope while using a more complex design.<sup><a href="#fn10" id="ref10">[10]</a></sup> The phenakistoscope was comprised of two discs&mdash;one disc had slots around the edge, and the other contained drawings of progressive motion. When the two discs were spun together in the same direction and viewed in a mirror through the first disc&rsquo;s slots, the pictures on the second disc appeared to move.<sup><a href="#fn11" id="ref11">[11]</a></sup></p>
+                    <img src="final-images/Phenakistoscope.gif" class="rightimg" style="max-height: 253px">
+                    <h4 id="phenakistoscope">Phenakistoscope (1831)</h4>
+                    <p>After the success of the <q>thaumatrope,</q> Belgian physicist Joseph Plateau introduced the <q>phenakistoscope</q> in 1832. The phenakistoscope utilized the same persistence of motion principle as the thaumatrope while using a more complex design.<sup><a href="#fn10" id="ref10">[10]</a></sup> The phenakistoscope was comprised of two discs&mdash;one disc had slots around the edge, and the other contained drawings of progressive motion. When the two discs were spun together in the same direction and viewed in a mirror through the first disc&rsquo;s slots, the pictures on the second disc appeared to move.<sup><a href="#fn11" id="ref11">[11]</a></sup></p>
 
-                        <h4 id="zoetrope">Zoetrope (1834)</h4>
-                        <p>With the success of Plateau&rsquo;s phenakistoscope, in 1834, William George Horner proposed an updated version of the device, which eliminated the need for a mirror and allowed more than one person to view it at the same time.<sup><a href="#fn12" id="ref12">[12]</a></sup> Horner&rsquo;s new design was forgotten for nearly thirty years until 1867, when it became patented in England by M. Bradley, and in America by William F. Lincoln under the name of <q>zoetrope.</q> Operating on the same principle as the phenakistoscope, the zoetrope was a cylindrical spinning device with several <q>frames</q> of animation printed on the inside of the interior. When one views the spinning images on the opposite side of the cylinder through the slits on the side, they act as a sort of rudimentary shutter, giving the images the illusion of motion.<sup><a href="#fn13" id="ref13">[13]</a></sup></p>
+                    <h4 id="zoetrope">Zoetrope (1834)</h4>
+                    <p>With the success of Plateau&rsquo;s phenakistoscope, in 1834, William George Horner proposed an updated version of the device, which eliminated the need for a mirror and allowed more than one person to view it at the same time.<sup><a href="#fn12" id="ref12">[12]</a></sup> Horner&rsquo;s new design was forgotten for nearly thirty years until 1867, when it became patented in England by M. Bradley, and in America by William F. Lincoln under the name of <q>zoetrope.</q> Operating on the same principle as the phenakistoscope, the zoetrope was a cylindrical spinning device with several <q>frames</q> of animation printed on the inside of the interior. When one views the spinning images on the opposite side of the cylinder through the slits on the side, they act as a sort of rudimentary shutter, giving the images the illusion of motion.<sup><a href="#fn13" id="ref13">[13]</a></sup></p>
 
-                        <h4 id="flip-book">Kineograph (Flip Book) (1834)</h4>
-                        <img src="final-images/flip-book-drawing.gif" class="centerimg" style="max-width: 638px;">
-                        <p>The <q>kineograph</q>, more commonly known nowadays as the <q>flip book,</q> was first patented in 1882 by Henry Van Hovenbergh. It was a book with particularly springy pages that had an animated sequence of frames printed near the unbound edge. By bending the pages back and then rapidly flipping through them one at a time, an illusion of motion could be obtained.<sup><a href="#fn14" id="ref14">[14]</a></sup></p>
-                        <p>The flip book was different from the already existing techniques because it could create the illusion of motion without anything serving as a flickering shutter as the slits had served in the previous devices. This is able to be accomplished as stated by Gestalt psychologists&mdash;they theorize that the eye can focus more easily on stationary objects than on moving ones. This idea seems to hold up with other animation techniques, even up to this point. Flip books were more often cited as inspiration by early animated film makers. While the book format still imposed a physical limit on the length of the animation, this limit was significantly longer than previous devices.<sup><a href="#fn15" id="ref15">[15]</a></sup></p>
+                    <h4 id="flip-book">Kineograph (Flip Book) (1834)</h4>
+                    <img src="final-images/flip-book-drawing.gif" class="centerimg" style="max-width: 638px;">
+                    <p>The <q>kineograph</q>, more commonly known nowadays as the <q>flip book,</q> was first patented in 1882 by Henry Van Hovenbergh. It was a book with particularly springy pages that had an animated sequence of frames printed near the unbound edge. By bending the pages back and then rapidly flipping through them one at a time, an illusion of motion could be obtained.<sup><a href="#fn14" id="ref14">[14]</a></sup></p>
+                    <p>The flip book was different from the already existing techniques because it could create the illusion of motion without anything serving as a flickering shutter as the slits had served in the previous devices. This is able to be accomplished as stated by Gestalt psychologists&mdash;they theorize that the eye can focus more easily on stationary objects than on moving ones. This idea seems to hold up with other animation techniques, even up to this point. Flip books were more often cited as inspiration by early animated film makers. While the book format still imposed a physical limit on the length of the animation, this limit was significantly longer than previous devices.<sup><a href="#fn15" id="ref15">[15]</a></sup></p>
 
-                        <h4 id="praxinoscope">Praxinoscope (1877)</h4>
-                        <img src="final-images/praxinoscope.png" class="rightimg">
-                        <p>The successor to the zoetrope, the <q>praxinoscope</q> was the result of work carried out by Frenchman Emile Reynaud. An adaptation of Horner&rsquo;s zoetrope, which, at the time, had become extremely popular, it used a similar cylindrical design that revolved. Images were viewed in a prism of mirrors which were located in the center of the drum. The result of this was animation without the loss of clarity of movement experienced in the zoetrope due to the slits moving across one&rsquo;s field of view.<sup><a href="#fn16" id="ref16">[16]</a></sup></p>
-                        <p>In 1877, Reynaud took his idea and expanded it into theatrical entertainment. Most of the optical toys at the time were simply consisted of repetitive images. Realizing his invention could be expanded to include more expansive sets of pictures, Reynaud devised a method of painting images on glass paints where were jointed together in a single, flexible strip. By shining light through the pictures, light could be reflected by the mirror prisms in the center and focused onto a screen through a lens. The praxinoscope is considered to be the first instance of projected animation.<sup><a href="#fn17" id="ref17">[17]</a></sup></p>
+                    <h4 id="praxinoscope">Praxinoscope (1877)</h4>
+                    <img src="final-images/praxinoscope.png" class="rightimg">
+                    <p>The successor to the zoetrope, the <q>praxinoscope</q> was the result of work carried out by Frenchman Emile Reynaud. An adaptation of Horner&rsquo;s zoetrope, which, at the time, had become extremely popular, it used a similar cylindrical design that revolved. Images were viewed in a prism of mirrors which were located in the center of the drum. The result of this was animation without the loss of clarity of movement experienced in the zoetrope due to the slits moving across one&rsquo;s field of view.<sup><a href="#fn16" id="ref16">[16]</a></sup></p>
+                    <p>In 1877, Reynaud took his idea and expanded it into theatrical entertainment. Most of the optical toys at the time were simply consisted of repetitive images. Realizing his invention could be expanded to include more expansive sets of pictures, Reynaud devised a method of painting images on glass paints where were jointed together in a single, flexible strip. By shining light through the pictures, light could be reflected by the mirror prisms in the center and focused onto a screen through a lens. The praxinoscope is considered to be the first instance of projected animation.<sup><a href="#fn17" id="ref17">[17]</a></sup></p>
 
                     <h3 id="in-brief">In Brief</h3>
                     <ul>
-                    <li>Animation has gone a long way from where it once began.</li>
-                    <li>Beginning animations weren't <q>true</q> animations, but still depicted the passage of time of objects.</li>
-                    <li>Numerous devices and inventions towards pursing the illusion of animation were being introduced starting in the 1650&rsquo;s.</li>
+                        <li>Animation has gone a long way from where it once began.</li>
+                        <li>Beginning animations weren't <q>true</q> animations, but still depicted the passage of time of objects.</li>
+                        <li>Numerous devices and inventions towards pursing the illusion of animation were being introduced starting in the 1650&rsquo;s.</li>
                         <ul style="margin-bottom: 20px;">
-                        <li>The magic lantern projected images using light shone through translucent slides.</li>
-                        <li>The thaumatrope created an optical illusion with the rapid juxtaposition of two images.</li>
-                        <li>The phenakistoscope utilized a disc mechanism and a mirror to create the motion effect.</li>
-                        <li>The zoetrope improved upon the phenakistoscope by removing the once-needed mirror.</li>
-                        <li>The kineograph, or flip book, showed motion through the rapid alternation of drawings.</li>
-                        <li>The praxinoscope was an adaption of the zoetrope that could project rapidly changing images&mdash;it is considered to be the first instance of projected animation.</li>
+                            <li>The magic lantern projected images using light shone through translucent slides.</li>
+                            <li>The thaumatrope created an optical illusion with the rapid juxtaposition of two images.</li>
+                            <li>The phenakistoscope utilized a disc mechanism and a mirror to create the motion effect.</li>
+                            <li>The zoetrope improved upon the phenakistoscope by removing the once-needed mirror.</li>
+                            <li>The kineograph, or flip book, showed motion through the rapid alternation of drawings.</li>
+                            <li>The praxinoscope was an adaption of the zoetrope that could project rapidly changing images&mdash;it is considered to be the first instance of projected animation.</li>
                         </ul>
                     </ul>
 
                     <nav id="sectionnav">
-
                         <div id="previoussectionnav">
                             <a href="history.html">
-                            <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>Previous: History Overview</span>
+                                <i class="fa fa-chevron-left fa-2x pull-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>Previous: History Overview</span>
                             </a>
                         </div>
 
                         <div id="nextsectionnav">
-                        <a href="film-era.html">
-                            Next: The Film Era of Animation&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-chevron-right fa-2x pull-right"></i>
-                        </a>
+                            <a href="film-era.html">
+                                Next: The Film Era of Animation&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-chevron-right fa-2x pull-right"></i>
+                            </a>
                         </div>
-
                     </nav>
-
                 </main>
 
                 <!-- Sidebar with pertinent links. -->
                 <aside id="sidebar" role="complementary">
-
                     <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
-                        <div id="contents">
-                            <!-- Insert an outline of the above article here. -->
-                            <ul>
+                    <div id="contents">
+                        <!-- Insert an outline of the above article here. -->
+                        <ul>
                             <li><a href="#overview">Overview</a></li>
-                                <ol>
+                            <ol>
                                 <li><a href="#early-approaches">Early Approaches</a></li>
-                                </ol>
+                            </ol>
                             <li><a href="#inventions">Devices and Inventions</a></li>
-                                <ol>
+                            <ol>
                                 <li><a href="#magic-lantern">Magic Lantern</a></li>
                                 <li><a href="#thaumatrope">Thaumatrope</a></li>
                                 <li><a href="#phenakistoscope">Phenakistoscope</a></li>
                                 <li><a href="#zoetrope">Zoetrope</a></li>
                                 <li><a href="#flip-book">Kineograph (Flip Book)</a></li>
                                 <li><a href="#praxinoscope">Praxinoscope</a></li>
-                                </ol>
+                            </ol>
                             <li><a href="#in-brief">In Brief</a></li>
-                            </ul>
-                        </div>
-
+                        </ul>
+                    </div>
                 </aside>
-
             </div>
 
             <!-- Just a spacer. -->
@@ -256,7 +248,6 @@
                 <br>
                 <!-- Footer menu with all the links. -->
                 <section id="footermenu" class="center">
-
                     <small style="font-size: 100%;">
                         <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
                         &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
@@ -272,13 +263,8 @@
                         <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
                         <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
                     </nav>
-
                 </section>
-
             </footer>
-
         </div>
-		
-	</body>	
-	
+    </body>	
 </html> 

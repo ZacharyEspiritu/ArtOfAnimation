@@ -2,233 +2,224 @@
 
 <html lang="en">
 
-	<!-- Header container. Welcome to Google! -->
-	<head>
-	
-		<!-- Meta and Title tags. -->
-		<title>TAoA: References</title>
-		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
-		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
-		<meta name="author" content="Zachary Espiritu">
-        
-		<!-- External style sheet. -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+    <!-- Header container. Welcome to Google! -->
+    <head>
+
+        <!-- Meta and Title tags. -->
+        <title>TAoA: References</title>
+        <meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
+        <meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
+        <meta name="author" content="Zachary Espiritu">
+
+        <!-- External style sheet. -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="cssmenu.css">
         <link rel="stylesheet" type="text/css" href="wrapper.css">
         <link rel="stylesheet" type="text/css" href="print.css" media="print">
-        
+
         <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
         <link rel="icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
         <link rel="shortcut icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
-		
-		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+
+        <!-- Imported fonts from GoogleFonts and FontAwesome. -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		
-		<!-- JQuery script CDN. -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
-		<!-- Script for drop-down menu. -->
-		<script>
-		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
-			var activeElement = $("#cssmenu>ul>li:first");
 
-			$("#cssmenu>ul>li").each(function() {
-				if ($(this).hasClass("active")) {
-					activeElement = $(this);
-				}
-			});
+        <!-- JQuery script CDN. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		var posLeft = activeElement.position().left;
-		var elementWidth = activeElement.width();
-		posLeft = posLeft + elementWidth/2 -6;
-		if (activeElement.hasClass("has-sub")) {
-			posLeft -= 6;
-		}
+        <!-- Script for drop-down menu. -->
+        <script>
+            $("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+            var activeElement = $("#cssmenu>ul>li:first");
 
-		$("#cssmenu #pIndicator").css("left", posLeft);
-		var element, leftPos, indicator = $("#cssmenu pIndicator");
-	
-		$("#cssmenu>ul>li").hover(function() {
-			element = $(this);
-			var w = element.width();
-			
-			if ($(this).hasClass("has-sub")) {
-				leftPos = element.position().left + w/2 - 12;
-			}
-			else {
-				leftPos = element.position().left + w/2 - 6;
-			}
+            $("#cssmenu>ul>li").each(function() {
+                if ($(this).hasClass("active")) {
+                    activeElement = $(this);
+                }
+            });
 
-			$("#cssmenu #pIndicator").css("left", leftPos);
-		}
-		, function() {
-			$("#cssmenu #pIndicator").css("left", posLeft);
-		});
+            var posLeft = activeElement.position().left;
+            var elementWidth = activeElement.width();
+            posLeft = posLeft + elementWidth/2 -6;
+            if (activeElement.hasClass("has-sub")) {
+                posLeft -= 6;
+            }
+
+            $("#cssmenu #pIndicator").css("left", posLeft);
+            var element, leftPos, indicator = $("#cssmenu pIndicator");
+
+            $("#cssmenu>ul>li").hover(function() {
+                element = $(this);
+                var w = element.width();
+
+                if ($(this).hasClass("has-sub")) {
+                    leftPos = element.position().left + w/2 - 12;
+                }
+                else {
+                    leftPos = element.position().left + w/2 - 6;
+                }
+
+                $("#cssmenu #pIndicator").css("left", leftPos);
+            }
+                                      , function() {
+                $("#cssmenu #pIndicator").css("left", posLeft);
+            });
 
 
-		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
-		$("#cssmenu>ul").children(".has-sub").each(function() {
-			var posLeftArrow = $(this).width();
-			posLeftArrow /= 2;
-			posLeftArrow -= 12;
-			$(this).find(".submenuArrow").css("left", posLeftArrow);
+            $("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+            $("#cssmenu>ul").children(".has-sub").each(function() {
+                var posLeftArrow = $(this).width();
+                posLeftArrow /= 2;
+                posLeftArrow -= 12;
+                $(this).find(".submenuArrow").css("left", posLeftArrow);
 
-		});
+            });
 
-		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
-		$( "#menu-button" ).click(function(){
-    		if ($(this).parent().hasClass("open")) {
-    			$(this).parent().removeClass("open");
-    		}
-    		else {
-    			$(this).parent().addClass("open");
-    		}
-    	});
-		</script>
-        
+            ("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+            $( "#menu-button" ).click(function(){
+                if ($(this).parent().hasClass("open")) {
+                    $(this).parent().removeClass("open");
+                }
+                else {
+                    $(this).parent().addClass("open");
+                }
+            });
+        </script>
+
         <!-- Style for "hanging" indent for bibliography. -->
         <style><!--
             ol li {
-                padding-left: 26px;
-                text-indent: -26px;
-                padding-top: 2px;
+            padding-left: 26px;
+            text-indent: -26px;
+            padding-top: 2px;
             }
             ol {
-                padding-bottom: 5px
+            padding-bottom: 5px
             }
-        --></style>
+            --></style>
 
-	</head>
-	
-	<!-- Body container. -->
-	<body>
-	
-	<!-- Wrapper section to make everything look neat and tight. -->
-	<div id="wrapper">
-	
-        <header>
-            <h1>The Art of Animation</h1>
-        </header>
+    </head>
 
-		<!-- Menu content. -->
-        <nav role="navigation">
-            <div id="cssmenu">
-                <ul>
-				    <li class="active"><a href="index.html"><span>Home</span></a></li>
-				    <li class="has-sub"><a href="history.html"><span>History</span></a>
-				        <ul>
-				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
-                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
-                        </ul>
-                    </li>
-				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
-				    <li><a href="culture.html"><span>Culture</span></a></li>
-				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
-                </ul>
-            </div>
-        </nav>
-		
-		<!-- Paragraph content. -->
-		<div id="content">
-		
-			<main id="text" role="main">
-				
-                <hgroup>
-                    <h2 style="padding-bottom: 12px;">References</h2>
-                </hgroup>
+    <!-- Body container. -->
+    <body>
 
-				<ol>
-					<li>Walters, Jonathan. <q>Mutoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 10, 2014. <a href="http://www.earlycinema.com/technology/mutoscope.html">http://www.earlycinema.com/technology/mutoscope.html</a>.</li>
-					<li>Thomas, Bob. <cite>Walt Disney: The Art of Animation: The Story of the Disney Studio Contribution to a New Art</cite>. 1958. Reprint, New York: Hyperion, 1991.</li>
-					<li>Lessing, Erich, photographer. <q>Tomb of Chunm-Hotep.</q> 1923. Beni Hassan, Egypt. Lessingimages.com. Online. Accessed May 9, 2014. </li>
-					<li>Peter, Eramo Jr. <q>About&hellip;</q> Magic Lantern Film Blog. Accessed January 13, 2014. <a href="http://magiclanternfilm.wordpress.com/about/">http://magiclanternfilm.wordpress.com/about/.</a></li>
-					<li>Clark, Dahl. <q>Magic Lantern.</q> Laura Hayes and John Howard Wileman Exhibit of Optical Toys. January 13, 2014. Accessed January 13, 2014. <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit02.htm">http:// courses.ncssm.edu/gallery/collections/toys/html/exhibit02.htm.</a></li>
-                    <li id="questia">Cavendish, Marshall, Peter Mavrikis, and Wendy Horobin, eds. <cite>How It Works: Science and Technology</cite>, 3rd ed., s.v. "Animation." New York: Marshall Cavendish, 2003. <em>Questia Ebrary</em>, Accessed January 14, 2014. <a href="http://www.questiaschool.com/read/121203752/how-it-works-science-and-technology">http://www.questiaschool.com/read/121203752/how-it-works-science-and-technology.</a></li>
-					<li>Waghorne, Dick. <em>Thaumatrope</em>, 2005. Laura Hayes and John Howard Wileman Exhibit of Optical Toys. Accessed January 10, 2014, <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit06.htm">http://courses.ncssm.edu/gallery/collections/toys/html/exhibit06.htm.</a></li>
-                    <li>Bright Bytes Studio. <q>Our Thaumatropes.</q> Jack and Beverly's Thaumatropes. Last modified March 2004. Accessed May 7, 2014. <a href="http://brightbytes.com/collection/thaum.html">http://brightbytes.com/ collection/thaum.html.</a></li>
-                    <li>Jobson, Christopher. <q>155 Years Before the First Animated Gif, Joseph Plateu Set Images in Motion with the Phenakistoscope.</q> Colossal. Last modified October 17, 2013. Accessed May 7, 2014. <a href="http://www.thisiscolossal.com/2013/10/the-first-animated-gifs/">http://www.thisiscolossal.com/2013/10/the-first-animated-gifs/.</a></li>
-                    <li>Muybridge, Eadweard. <cite>The zoopraxiscope&mdash;a couple waltzing</cite>, c. 1893. The Williams College of Art. Accessed January 13, 2014. <a href="http://commons.wikimedia.org/wiki/File:Phenakistoscope_3g07690a.gif">http://commons.wikimedia.org/wiki/File:Phenakistoscope_3g07690a.gif.</a></li>
-                    <li>Walters, Jonathan. <q>Zoetrope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 13, 2014. <a href="http://www.earlycinema.com/technology/zoetrope.html">http://www.earlycinema.com/technology/ zoetrope.html.</a></li>
-                    <li>Clark, Dahl and Dick Waghorne. <q>Zoetrope.</q> Laura Hayes and John Howard Wileman Exhibit of Optical Toys. Accessed January 13, 2014.  <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit10.htm">http://courses.ncssm.edu/gallery/collections/toys/html/exhibit10.htm.</a></li>
-                    <li>Fouch&eacute;, Pascal. <q>History.</q> Flipbook.info. Accessed May 7, 2014. <a href="http://www.flipbook.info/history.php">http://www. flipbook.info/history.php.</a></li>
-                    <li>Kay, Jeffrey. <q>History.</q> Flippies&mdash;Custom Flipbooks. Accessed May 7, 2014. <a href="http://www.flippies.com/flipbook-history/">http://www.flippies.com/flipbook-history/.</a></li>
-                    <li>Reynaud, d&rsquo;&Eacute;mile. <cite>Le Praxinoscope d&rsquo;&eacute;mile Reynaud Pour La Nature, Revue Des Sciences</cite>, 1879. Le Conservatoire num&eacute;rique des Arts &amp; M&eacute;tiers. Accessed January 14, 2014. <a href="http://cnum.cnam.fr/CGI/fpage.cgi?4KY28.12/137/100/432/0/0">http://cnum.cnam.fr/CGI/fpage.cgi?4KY28.12/137/100/432/0/0.</a></li>
-                    <li>Walters, Jonathan. <q>Praxinoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 14, 2014. <a href="http://www.earlycinema.com/technology/praxinoscope.html">http://www.earlycinema.com/technology/ praxinoscope.html.</a></li>
-					<li>Blackton, J. Stuart. <cite>The Enchanted Drawing</cite>, 1900. The Library of Congress. Accessed January 14, 2014. <a href="http://memory.loc.gov/mbrs/animp/1592t.gif.">http://memory.loc.gov/mbrs/animp/1592t.gif.</a><br></li>
-					<li><cite>Fantasmagorie</cite>. Film. Directed by &Eacute;mile Cohl. s.l.: Soci&eacute;t&eacute; des Etablissements L. Gaumont, 1908.<br></li>
-					<li><em>Webopedia</em>.  s.v. <q>cel animation.</q> Accessed January 10, 2014. <a href="http://www.webopedia.com/TERM/C/cel_animation.html">http://www. webopedia.com/TERM/C/cel_animation.html</a><br></li>	
-					<li id="proquest1">Jackson, Kathy M. 2005. <q>Living life inside the lines: Tales from the golden age of animation.</q> <cite>The Journal of American Culture</cite> 28, no. 4: 446-447. <em>Proquest</em>. Accessed January 16, 2014. <a href="http://search.proquest.com/docview/200571487?accountid=41494">http://search. proquest.com/docview/200571487?accountid=41494.</a><br></li>	
-					<li>Lee, Lavalle, James T. Nethery, and Les Carpenter. <q>History.</q> Traditional Animation. Accessed January 14, 2014. <a href="http://www.traditionalanimation.com/animation-library/history/">http://www.traditionalanimation.com/animation-library/history/.</a><br></li>
-					<li>TV Tropes Foundation, LLC. <q>The Golden Age of Animation.</q> TV Tropes. Accessed January 14, 2014. <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGoldenAgeOfAnimation.">http://tvtropes.org/pmwiki/pmwiki.php/Main/ TheGoldenAgeOfAnimation.</a><br></li>
-					<li><cite>The Merriam-Webster Online Dictionary</cite>, s.v. <q>animation,</q> accessed January 10, 2014, <a href="http://www.merriam-webster.com">http://www.merriam-webster.com</a>.<br></li>
-                    <li>Walters, Jonathan. <q>Mutoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 10, 2014. <a href="http://www.earlycinema.com/technology/mutoscope.html">http://www.earlycinema.com/technology/ mutoscope.html</a>.</li>
-					<li>Cherry, Kendra. <q>What is Gestalt Psychology?</q> About.com Psychology. Last modified November 12, 2013. Accessed January 9, 2014. <a href="http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm">http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm.</a><br></li>
-                    <li>Anderson, Joseph and Barbara Anderson. "The Myth of Persistence of Vision Revisited." <em>Journal of Film and Video</em> 45, no. 1 (Spring 1993): 3&ndash;12.</li>
-					<li>Sito, Tom. <q>Introduction: Why A History of Animation Unions?</q> In <cite>Drawing the Line: The Untold Story of the Animation Unions from Bosko to Bart Simpson</cite>, 1. Lexington: University Press of Kentucky, 2006.<br></li>
-					<li><cite>Duck and Cover</cite>. Film. Directed by Anthony Rizzo. New York: Archer Productions, 1952. Accessed from <a href="https://archive.org/details/DuckandC1951">https://archive.org/details/DuckandC1951</a>.<br></li>
-					<li>Povenmire, Dan, and Jeff "Swampy" Marsh, prods. <em>Phineas and Ferb</em>, "Pilot," episode 1. Originally aired August 17, 2007.<br></li>
-					<li>Basile, Nancy. <q>Cel Animation.</q> About.com: Animated TV. Accessed January 11, 2014. <a href="http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm">http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm.</a><br></li>
-                    <li>Kayo, Mark. <q>The History of Cartoon Cel Animation.</q> eHow. Accessed January 16, 2014. <a href="http://www.ehow.com/about_6454561_history-cartoon-cel-animation.html">http://www.ehow.com/about_6454561_history-cartoon-cel-animation. html</a></li>
-                    <li>Riffel, Casey. <q>Dissecting Bambi: Multiplanar Photography, the Cel Technique, and the Flowering of Full Animation.</q> <cite>Velvet Light Trap</cite> 69 (2012): 3-16. Accessed January 13, 2014. <a href="http://search.proquest.com/docview/923757400/142F95CFC89119D0A77/1?accountid=41494">http://search.proquest.com/docview/923757400/142F95CFC89119D0A77/1?accountid=41494.</a></li>
-                    <li>University of California, Santa Barbara. <q>Art Music Video.</q> UCSB Courses. Accessed May 13, 2014. <a href="http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm">http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm.</a></li>
-                    <li>Priebe, Ken A. <cite>The advanced art of stop-motion animation</cite>. Boston, Mass.: Course Technology, 2011. </li>
-                    <li id="proquest2">Power, Pat. <q>Ludic Toons: The Dynamics of Creative Play in Studio Animation.</q> <cite>American Journal of Play</cite> 5, no. 1 (2012): 22-54. <em>Proquest</em>. Accessed January 14, 2014. <a href="http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494">http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494.</a></li>
-                    <li>ScienceDaily. <q>Computer animation.</q> ScienceDaily Articles. Accessed May 13, 2014. <a href="http://www.sciencedaily.com/articles/c/computer_animation.htm">http://www.sciencedaily.com/articles/c/computer_animation.htm.</a></li>
-                    <li>DBS Interactive. <q>What Is the Difference Between 3D and 2D Animation?.</q> DBS. Last modified January 29, 2010. Accessed May 13, 2014. <a href="http://www.dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/">http://www.dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/</a></li>
-                    <li>Dube, Ryan. <q>What Is CGI Animation?: Technology Explained.</q> MakeUseOf.com. Accessed January 14, 2014. <a href="http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/">http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/</a></li>
-                    <li>Roos, Dave. <q>How Computer Animation Works.</q> HowStuffWorks, Inc. Accessed January 15, 2014. <a href="http://entertainment.howstuffworks.com/computer-animation.htm">http://entertainment.howstuffworks.com/computer-animation.htm</a></li>
-                    <li>Moniot, Robert K. <q>Motion Blur.</q> Digital Artform. Last modified June 4, 2005. Accessed January 14, 2014. <a href="http://www.digitalartform.com/archives/2005/06/motion_blur.html">http://www.digitalartform.com/archives/2005/06/motion_blur.html</a></li>
-				</ol>
-			</main>
-            
-            <!-- Sidebar with pertinent links. -->
-            <aside id="sidebar" role="complementary">
-                
-                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Notes</span>
+        <!-- Wrapper section to make everything look neat and tight. -->
+        <div id="wrapper">
+
+            <header>
+                <h1>The Art of Animation</h1>
+            </header>
+
+            <!-- Menu content. -->
+            <nav role="navigation">
+                <div id="cssmenu">
+                    <ul>
+                        <li class="active"><a href="index.html"><span>Home</span></a></li>
+                        <li class="has-sub"><a href="history.html"><span>History</span></a>
+                            <ul>
+                                <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                                <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+                        <li><a href="culture.html"><span>Culture</span></a></li>
+                        <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Paragraph content. -->
+            <div id="content">
+
+                <main id="text" role="main">
+
+                    <hgroup>
+                        <h2 style="padding-bottom: 12px;">References</h2>
+                    </hgroup>
+
+                    <ol>
+                        <li>Walters, Jonathan. <q>Mutoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 10, 2014. <a href="http://www.earlycinema.com/technology/mutoscope.html">http://www.earlycinema.com/technology/mutoscope.html</a>.</li>
+                        <li>Thomas, Bob. <cite>Walt Disney: The Art of Animation: The Story of the Disney Studio Contribution to a New Art</cite>. 1958. Reprint, New York: Hyperion, 1991.</li>
+                        <li>Lessing, Erich, photographer. <q>Tomb of Chunm-Hotep.</q> 1923. Beni Hassan, Egypt. Lessingimages.com. Online. Accessed May 9, 2014. </li>
+                        <li>Peter, Eramo Jr. <q>About&hellip;</q> Magic Lantern Film Blog. Accessed January 13, 2014. <a href="http://magiclanternfilm.wordpress.com/about/">http://magiclanternfilm.wordpress.com/about/.</a></li>
+                        <li>Clark, Dahl. <q>Magic Lantern.</q> Laura Hayes and John Howard Wileman Exhibit of Optical Toys. January 13, 2014. Accessed January 13, 2014. <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit02.htm">http:// courses.ncssm.edu/gallery/collections/toys/html/exhibit02.htm.</a></li>
+                        <li id="questia">Cavendish, Marshall, Peter Mavrikis, and Wendy Horobin, eds. <cite>How It Works: Science and Technology</cite>, 3rd ed., s.v. "Animation." New York: Marshall Cavendish, 2003. <em>Questia Ebrary</em>, Accessed January 14, 2014. <a href="http://www.questiaschool.com/read/121203752/how-it-works-science-and-technology">http://www.questiaschool.com/read/121203752/how-it-works-science-and-technology.</a></li>
+                        <li>Waghorne, Dick. <em>Thaumatrope</em>, 2005. Laura Hayes and John Howard Wileman Exhibit of Optical Toys. Accessed January 10, 2014, <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit06.htm">http://courses.ncssm.edu/gallery/collections/toys/html/exhibit06.htm.</a></li>
+                        <li>Bright Bytes Studio. <q>Our Thaumatropes.</q> Jack and Beverly's Thaumatropes. Last modified March 2004. Accessed May 7, 2014. <a href="http://brightbytes.com/collection/thaum.html">http://brightbytes.com/ collection/thaum.html.</a></li>
+                        <li>Jobson, Christopher. <q>155 Years Before the First Animated Gif, Joseph Plateu Set Images in Motion with the Phenakistoscope.</q> Colossal. Last modified October 17, 2013. Accessed May 7, 2014. <a href="http://www.thisiscolossal.com/2013/10/the-first-animated-gifs/">http://www.thisiscolossal.com/2013/10/the-first-animated-gifs/.</a></li>
+                        <li>Muybridge, Eadweard. <cite>The zoopraxiscope&mdash;a couple waltzing</cite>, c. 1893. The Williams College of Art. Accessed January 13, 2014. <a href="http://commons.wikimedia.org/wiki/File:Phenakistoscope_3g07690a.gif">http://commons.wikimedia.org/wiki/File:Phenakistoscope_3g07690a.gif.</a></li>
+                        <li>Walters, Jonathan. <q>Zoetrope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 13, 2014. <a href="http://www.earlycinema.com/technology/zoetrope.html">http://www.earlycinema.com/technology/ zoetrope.html.</a></li>
+                        <li>Clark, Dahl and Dick Waghorne. <q>Zoetrope.</q> Laura Hayes and John Howard Wileman Exhibit of Optical Toys. Accessed January 13, 2014.  <a href="http://courses.ncssm.edu/gallery/collections/toys/html/exhibit10.htm">http://courses.ncssm.edu/gallery/collections/toys/html/exhibit10.htm.</a></li>
+                        <li>Fouch&eacute;, Pascal. <q>History.</q> Flipbook.info. Accessed May 7, 2014. <a href="http://www.flipbook.info/history.php">http://www. flipbook.info/history.php.</a></li>
+                        <li>Kay, Jeffrey. <q>History.</q> Flippies&mdash;Custom Flipbooks. Accessed May 7, 2014. <a href="http://www.flippies.com/flipbook-history/">http://www.flippies.com/flipbook-history/.</a></li>
+                        <li>Reynaud, d&rsquo;&Eacute;mile. <cite>Le Praxinoscope d&rsquo;&eacute;mile Reynaud Pour La Nature, Revue Des Sciences</cite>, 1879. Le Conservatoire num&eacute;rique des Arts &amp; M&eacute;tiers. Accessed January 14, 2014. <a href="http://cnum.cnam.fr/CGI/fpage.cgi?4KY28.12/137/100/432/0/0">http://cnum.cnam.fr/CGI/fpage.cgi?4KY28.12/137/100/432/0/0.</a></li>
+                        <li>Walters, Jonathan. <q>Praxinoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 14, 2014. <a href="http://www.earlycinema.com/technology/praxinoscope.html">http://www.earlycinema.com/technology/ praxinoscope.html.</a></li>
+                        <li>Blackton, J. Stuart. <cite>The Enchanted Drawing</cite>, 1900. The Library of Congress. Accessed January 14, 2014. <a href="http://memory.loc.gov/mbrs/animp/1592t.gif.">http://memory.loc.gov/mbrs/animp/1592t.gif.</a><br></li>
+                        <li><cite>Fantasmagorie</cite>. Film. Directed by &Eacute;mile Cohl. s.l.: Soci&eacute;t&eacute; des Etablissements L. Gaumont, 1908.<br></li>
+                        <li><em>Webopedia</em>.  s.v. <q>cel animation.</q> Accessed January 10, 2014. <a href="http://www.webopedia.com/TERM/C/cel_animation.html">http://www. webopedia.com/TERM/C/cel_animation.html</a><br></li>	
+                        <li id="proquest1">Jackson, Kathy M. 2005. <q>Living life inside the lines: Tales from the golden age of animation.</q> <cite>The Journal of American Culture</cite> 28, no. 4: 446-447. <em>Proquest</em>. Accessed January 16, 2014. <a href="http://search.proquest.com/docview/200571487?accountid=41494">http://search. proquest.com/docview/200571487?accountid=41494.</a><br></li>	
+                        <li>Lee, Lavalle, James T. Nethery, and Les Carpenter. <q>History.</q> Traditional Animation. Accessed January 14, 2014. <a href="http://www.traditionalanimation.com/animation-library/history/">http://www.traditionalanimation.com/animation-library/history/.</a><br></li>
+                        <li>TV Tropes Foundation, LLC. <q>The Golden Age of Animation.</q> TV Tropes. Accessed January 14, 2014. <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheGoldenAgeOfAnimation.">http://tvtropes.org/pmwiki/pmwiki.php/Main/ TheGoldenAgeOfAnimation.</a><br></li>
+                        <li><cite>The Merriam-Webster Online Dictionary</cite>, s.v. <q>animation,</q> accessed January 10, 2014, <a href="http://www.merriam-webster.com">http://www.merriam-webster.com</a>.<br></li>
+                        <li>Walters, Jonathan. <q>Mutoscope.</q> EarlyCinema.com. Last modified March 2002. Accessed January 10, 2014. <a href="http://www.earlycinema.com/technology/mutoscope.html">http://www.earlycinema.com/technology/ mutoscope.html</a>.</li>
+                        <li>Cherry, Kendra. <q>What is Gestalt Psychology?</q> About.com Psychology. Last modified November 12, 2013. Accessed January 9, 2014. <a href="http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm">http://psychology.about.com/od/schoolsofthought/f/gestalt_faq.htm.</a><br></li>
+                        <li>Anderson, Joseph and Barbara Anderson. "The Myth of Persistence of Vision Revisited." <em>Journal of Film and Video</em> 45, no. 1 (Spring 1993): 3&ndash;12.</li>
+                        <li>Sito, Tom. <q>Introduction: Why A History of Animation Unions?</q> In <cite>Drawing the Line: The Untold Story of the Animation Unions from Bosko to Bart Simpson</cite>, 1. Lexington: University Press of Kentucky, 2006.<br></li>
+                        <li><cite>Duck and Cover</cite>. Film. Directed by Anthony Rizzo. New York: Archer Productions, 1952. Accessed from <a href="https://archive.org/details/DuckandC1951">https://archive.org/details/DuckandC1951</a>.<br></li>
+                        <li>Povenmire, Dan, and Jeff "Swampy" Marsh, prods. <em>Phineas and Ferb</em>, "Pilot," episode 1. Originally aired August 17, 2007.<br></li>
+                        <li>Basile, Nancy. <q>Cel Animation.</q> About.com: Animated TV. Accessed January 11, 2014. <a href="http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm">http://animatedtv.about.com/od/thesimpsonsfaq/a/celanimation.htm.</a><br></li>
+                        <li>Kayo, Mark. <q>The History of Cartoon Cel Animation.</q> eHow. Accessed January 16, 2014. <a href="http://www.ehow.com/about_6454561_history-cartoon-cel-animation.html">http://www.ehow.com/about_6454561_history-cartoon-cel-animation. html</a></li>
+                        <li>Riffel, Casey. <q>Dissecting Bambi: Multiplanar Photography, the Cel Technique, and the Flowering of Full Animation.</q> <cite>Velvet Light Trap</cite> 69 (2012): 3-16. Accessed January 13, 2014. <a href="http://search.proquest.com/docview/923757400/142F95CFC89119D0A77/1?accountid=41494">http://search.proquest.com/docview/923757400/142F95CFC89119D0A77/1?accountid=41494.</a></li>
+                        <li>University of California, Santa Barbara. <q>Art Music Video.</q> UCSB Courses. Accessed May 13, 2014. <a href="http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm">http://www.mat.ucsb.edu/~wakefield/amv/theory-animation.htm.</a></li>
+                        <li>Priebe, Ken A. <cite>The advanced art of stop-motion animation</cite>. Boston, Mass.: Course Technology, 2011. </li>
+                        <li id="proquest2">Power, Pat. <q>Ludic Toons: The Dynamics of Creative Play in Studio Animation.</q> <cite>American Journal of Play</cite> 5, no. 1 (2012): 22-54. <em>Proquest</em>. Accessed January 14, 2014. <a href="http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494">http://search.proquest.com/docview/1459141074/142F96DA221608024F1/8?accountid=41494.</a></li>
+                        <li>ScienceDaily. <q>Computer animation.</q> ScienceDaily Articles. Accessed May 13, 2014. <a href="http://www.sciencedaily.com/articles/c/computer_animation.htm">http://www.sciencedaily.com/articles/c/computer_animation.htm.</a></li>
+                        <li>DBS Interactive. <q>What Is the Difference Between 3D and 2D Animation?.</q> DBS. Last modified January 29, 2010. Accessed May 13, 2014. <a href="http://www.dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/">http://www.dbswebsite.com/blog/2010/01/29/what-is-the-difference-between-3d-and-2d-animation/</a></li>
+                        <li>Dube, Ryan. <q>What Is CGI Animation?: Technology Explained.</q> MakeUseOf.com. Accessed January 14, 2014. <a href="http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/">http://www.makeuseof.com/tag/technology-explained-what-is-cgi-animation/</a></li>
+                        <li>Roos, Dave. <q>How Computer Animation Works.</q> HowStuffWorks, Inc. Accessed January 15, 2014. <a href="http://entertainment.howstuffworks.com/computer-animation.htm">http://entertainment.howstuffworks.com/computer-animation.htm</a></li>
+                        <li>Moniot, Robert K. <q>Motion Blur.</q> Digital Artform. Last modified June 4, 2005. Accessed January 14, 2014. <a href="http://www.digitalartform.com/archives/2005/06/motion_blur.html">http://www.digitalartform.com/archives/2005/06/motion_blur.html</a></li>
+                    </ol>
+                </main>
+
+                <!-- Sidebar with pertinent links. -->
+                <aside id="sidebar" role="complementary">
+                    <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Notes</span>
                     <div id="contents" style="padding-right: 30px; padding-left: -5px;">
                         <ul style="list-style-type: disc;">
-							<li>References are cited in Turabian.</li>
-							<li><a href="#questia"><span class="underline">Reference #6</span></a> (<cite>How It Works: Science and Technology</cite> by Marshall Cavendish) was obtained from <span class="bold">Questia</span>.</li>
-							<li><a href="#proquest1"><span class="underline">Reference #20</span></a> (<q>Living life inside the lines: Tales from the golden age of animation</q> from <cite>The Journal of American Culture</cite> Vol. 28, Issue 4 by Kathy M. Jackson) was obtained from <span class="bold">Proquest</span>.</li>
+                            <li>References are cited in Turabian.</li>
+                            <li><a href="#questia"><span class="underline">Reference #6</span></a> (<cite>How It Works: Science and Technology</cite> by Marshall Cavendish) was obtained from <span class="bold">Questia</span>.</li>
+                            <li><a href="#proquest1"><span class="underline">Reference #20</span></a> (<q>Living life inside the lines: Tales from the golden age of animation</q> from <cite>The Journal of American Culture</cite> Vol. 28, Issue 4 by Kathy M. Jackson) was obtained from <span class="bold">Proquest</span>.</li>
                             <li><a href="#proquest2"><span class="underline">Reference #35</span></a> (<q>Ludic Toons: The Dynamics of Creative Play in Studio Animation</q> from <cite>American Journal of Play</cite> Vol. 5, Issue 1 by Pat Power) was obtained from <span class="bold">Proquest</span>.</li>
-						</ul>
+                        </ul>
                     </div>
-                    
-            </aside>
-		
-		</div>
-		
-        <!-- Just a spacer. -->
-		<div id="thickrule" style="margin: 0px;"></div>
-		
-		<!-- Footer. Div is unnecessary but helps with seeing things later on and semantics. -->
-		<footer role="contentinfo" style="margin: 0px; padding: 0px;">
-			<!-- Footer menu with all the links. -->
-			<section id="footermenu" class="center" style="margin: 0px;">
-				
-                <small style="font-size: 100%;">
-                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
-                    &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
-                </small>
+                </aside>
+            </div>
+
+            <!-- Just a spacer. -->
+            <div id="thickrule" style="margin: 0px;"></div>
+
+            <!-- Footer. Div is unnecessary but helps with seeing things later on and semantics. -->
+            <footer role="contentinfo" style="margin: 0px; padding: 0px;">
                 
-				<nav role="navigation" style="padding-top: 6px;">
-					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
-				</nav>
-				
-			</section>
-    
-		</footer>
-	
-	</div>
-		
-	</body>	
-	
-</html> 
+                <!-- Footer menu with all the links. -->
+                <section id="footermenu" class="center" style="margin: 0px;">
+                    <small style="font-size: 100%;">
+                        <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                        &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                    </small>
+                    <nav role="navigation" style="padding-top: 6px;">
+                        <a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+                    </nav>
+                </section>
+            </footer>
+        </div>
+    </body>
+</html>
