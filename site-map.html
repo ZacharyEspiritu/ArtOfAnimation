@@ -2,187 +2,180 @@
 
 <html lang="en">
 
-	<!-- Header container. Welcome to Google! -->
-	<head>
-	
-		<!-- Meta and Title tags. -->
-		<title>TAoA: Site Map</title>
-		<meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
-		<meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
-		<meta name="author" content="Zachary Espiritu">
-        
-		<!-- External style sheet. -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="cssmenu.css">
+    <!-- Header container. Welcome to Google! -->
+    <head>
+
+        <!-- Meta and Title tags. -->
+        <title>TAoA: Site Map</title>
+        <meta name="keywords" content="Animation, History, Film, Silent Age, Golden Age, Traditional, CGI, Duck and Cover, Gestalt">
+        <meta name="description" content="A history of animation spanning over decades of development and craft in the field of animation..."> 
+        <meta name="author" content="Zachary Espiritu">
+
+        <!-- External style sheet. -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="cssmenu.css">
         <link rel="stylesheet" type="text/css" href="wrapper.css">
         <link rel="stylesheet" type="text/css" href="print.css" media="print">
-        
+
         <!-- Code for the icon seen on the tab and next to the URL in the browser bar. The "shortcut icon" is included for compability with Internet Explorer.-->
         <link rel="icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
         <link rel="shortcut icon" href="/final-images/icon/favicon.ico" type="image/x-icon"/>
-		
-		<!-- Imported fonts from GoogleFonts and FontAwesome. -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
+
+        <!-- Imported fonts from GoogleFonts and FontAwesome. -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Oswald" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		
-		<!-- JQuery script CDN. -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
-		<!-- Script for drop-down menu. -->
-		<script>
-		$("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
-			var activeElement = $("#cssmenu>ul>li:first");
 
-			$("#cssmenu>ul>li").each(function() {
-				if ($(this).hasClass("active")) {
-					activeElement = $(this);
-				}
-			});
+        <!-- JQuery script CDN. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		var posLeft = activeElement.position().left;
-		var elementWidth = activeElement.width();
-		posLeft = posLeft + elementWidth/2 -6;
-		if (activeElement.hasClass("has-sub")) {
-			posLeft -= 6;
-		}
+        <!-- Script for drop-down menu. -->
+        <script>
+            $("#cssmenu").prepend("<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>");
+            var activeElement = $("#cssmenu>ul>li:first");
 
-		$("#cssmenu #pIndicator").css("left", posLeft);
-		var element, leftPos, indicator = $("#cssmenu pIndicator");
-	
-		$("#cssmenu>ul>li").hover(function() {
-			element = $(this);
-			var w = element.width();
-			
-			if ($(this).hasClass("has-sub")) {
-				leftPos = element.position().left + w/2 - 12;
-			}
-			else {
-				leftPos = element.position().left + w/2 - 6;
-			}
+            $("#cssmenu>ul>li").each(function() {
+                if ($(this).hasClass("active")) {
+                    activeElement = $(this);
+                }
+            });
 
-			$("#cssmenu #pIndicator").css("left", leftPos);
-		}
-		, function() {
-			$("#cssmenu #pIndicator").css("left", posLeft);
-		});
+            var posLeft = activeElement.position().left;
+            var elementWidth = activeElement.width();
+            posLeft = posLeft + elementWidth/2 -6;
+            if (activeElement.hasClass("has-sub")) {
+                posLeft -= 6;
+            }
+
+            $("#cssmenu #pIndicator").css("left", posLeft);
+            var element, leftPos, indicator = $("#cssmenu pIndicator");
+
+            $("#cssmenu>ul>li").hover(function() {
+                element = $(this);
+                var w = element.width();
+
+                if ($(this).hasClass("has-sub")) {
+                    leftPos = element.position().left + w/2 - 12;
+                }
+                else {
+                    leftPos = element.position().left + w/2 - 6;
+                }
+
+                $("#cssmenu #pIndicator").css("left", leftPos);
+            }
+                                      , function() {
+                $("#cssmenu #pIndicator").css("left", posLeft);
+            });
 
 
-		$("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
-		$("#cssmenu>ul").children(".has-sub").each(function() {
-			var posLeftArrow = $(this).width();
-			posLeftArrow /= 2;
-			posLeftArrow -= 12;
-			$(this).find(".submenuArrow").css("left", posLeftArrow);
+            $("#cssmenu>ul>.has-sub>ul").append("<div class="submenuArrow"></div>");
+            $("#cssmenu>ul").children(".has-sub").each(function() {
+                var posLeftArrow = $(this).width();
+                posLeftArrow /= 2;
+                posLeftArrow -= 12;
+                $(this).find(".submenuArrow").css("left", posLeftArrow);
 
-		});
+            });
 
-		("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
-		$( "#menu-button" ).click(function(){
-    		if ($(this).parent().hasClass("open")) {
-    			$(this).parent().removeClass("open");
-    		}
-    		else {
-    			$(this).parent().addClass("open");
-    		}
-    	});
-		</script>
+            ("#cssmenu>ul").prepend("<li id="menu-button"><a>Menu</a></li>");
+            $( "#menu-button" ).click(function(){
+                if ($(this).parent().hasClass("open")) {
+                    $(this).parent().removeClass("open");
+                }
+                else {
+                    $(this).parent().addClass("open");
+                }
+            });
+        </script>
+    </head>
 
-	</head>
-	
-	<!-- Body container. -->
-	<body>
-	
-	<!-- Wrapper section to make everything look neat and tight. -->
-	<div id="wrapper">
-	
-        <header>
-            <h1>The Art of Animation</h1>
-        </header>
+    <!-- Body container. -->
+    <body>
 
-		<!-- Menu content. -->
-        <nav role="navigation">
-            <div id="cssmenu">
-                <ul>
-				    <li class="active"><a href="index.html"><span>Home</span></a></li>
-				    <li class="has-sub"><a href="history.html"><span>History</span></a>
-				        <ul>
-				            <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
-                            <li><a href="film-era.html"><span>The Film Era</span></a></li>
+        <!-- Wrapper section to make everything look neat and tight. -->
+        <div id="wrapper">
+
+            <header>
+                <h1>The Art of Animation</h1>
+            </header>
+
+            <!-- Menu content. -->
+            <nav role="navigation">
+                <div id="cssmenu">
+                    <ul>
+                        <li class="active"><a href="index.html"><span>Home</span></a></li>
+                        <li class="has-sub"><a href="history.html"><span>History</span></a>
+                            <ul>
+                                <li><a href="before-film.html"><span>Animation Before Film</span></a></li>
+                                <li><a href="film-era.html"><span>The Film Era</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
+                        <li><a href="culture.html"><span>Culture</span></a></li>
+                        <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Paragraph content. -->
+            <div id="content">
+                <main id="text" role="main">
+                    <hgroup>
+                        <h2>Site Map</h2>
+                        <h3 id="nav">Navigation</h3>
+                    </hgroup>
+
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="history.html">History</a></li>
+                        <ul style="font-size: 1em;">
+                            <li><a href="before-film.html">Animation Before Film</a></li>
+                            <li><a href="film-era.html">The Film Era of Animation</a></li>
                         </ul>
-                    </li>
-				    <li><a href="modern-techniques.html"><span>Modern Techniques</span></a></li>
-				    <li><a href="culture.html"><span>Culture</span></a></li>
-				    <li class="last"><a href="timeline.html"><span>Timeline</span></a></li>
-                </ul>
-            </div>
-        </nav>
-		
-		<!-- Paragraph content. -->
-		<div id="content">
-			<main id="text" role="main">
-                <hgroup>
-                    <h2>Site Map</h2>
-					<h3 id="nav">Navigation</h3>
-                </hgroup>
+                        <li><a href="modern-techniques.html">Modern Techniques</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="timeline.html">Timeline</a></li>
+                        <li><a href="site-map.html">Site Map</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li style="padding-bottom: 17px;"><a href="references.html">References</a></li>
+                    </ul>
+                </main>
 
-				<ul>
-					<li><a href="index.html">Homepage</a></li>
-					<li><a href="history.html">History</a></li>
-					<ul style="font-size: 1em;">
-						<li><a href="before-film.html">Animation Before Film</a></li>
-						<li><a href="film-era.html">The Film Era of Animation</a></li>
-					</ul>
-					<li><a href="modern-techniques.html">Modern Techniques</a></li>
-					<li><a href="culture.html">Culture</a></li>
-					<li><a href="timeline.html">Timeline</a></li>
-					<li><a href="site-map.html">Site Map</a></li>
-					<li><a href="contact.html">Contact</a></li>
-					<li style="padding-bottom: 17px;"><a href="references.html">References</a></li>
-				</ul>
-			</main>
-            
-            <!-- Sidebar with pertinent links. -->
-            <aside id="sidebar" role="complementary">  
-                <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
+                <!-- Sidebar with pertinent links. -->
+                <aside id="sidebar" role="complementary">  
+                    <span class="oswald_font bold" style="font-size: 1.5em; letter-spacing: 0;">Contents</span>
                     <div id="contents">
                         <!-- Insert an outline of the above article here. -->
                         <ul>
                             <li><a href="#nav">Navigation</a></li>
                         </ul>
                     </div>      
-            </aside>
-		</div>
-		
-        <!-- Just a spacer. -->
-		<div id="thickrule" style="margin: 0px;"></div>
-		
-		<!-- Footer. Div is unnecessary but helps with seeing things later on. -->
-		<footer role="contentinfo" style="margin: 0px; padding: 0px;">
-			<!-- Footer menu with all the links. -->
-			<section id="footermenu" class="center" style="margin: 0px;">
-				
-                <small style="font-size: 100%;">
-                    <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
-                    &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
-                </small>
-                
-				<nav role="navigation" style="padding-top: 6px;">
-					<a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
-                    <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
-				</nav>
-				
-			</section>
-    
-		</footer>
-	
-	</div>
-		
-	</body>	
-	
-</html> 
+                </aside>
+            </div>
+
+            <!-- Just a spacer. -->
+            <div id="thickrule" style="margin: 0px;"></div>
+
+            <!-- Footer. Div is unnecessary but helps with seeing things later on. -->
+            <footer role="contentinfo" style="margin: 0px; padding: 0px;">
+                <!-- Footer menu with all the links. -->
+                <section id="footermenu" class="center" style="margin: 0px;">
+                    <small style="font-size: 100%;">
+                        <i class="fa fa-flag"></i>&nbsp;&nbsp;The Art of Animation 1.0&nbsp;&nbsp;&bull;&nbsp;&nbsp;Created by Zachary Espiritu<br>
+                        &copy; 2015<a href="http://www.regis.org/">Regis High School</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Last edited May 11, 2014.
+                    </small>
+
+                    <nav role="navigation" style="padding-top: 6px;">
+                        <a href="index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="history.html"><i class="fa fa-book"></i>&nbsp;&nbsp;History</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="modern-techniques.html"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Modern Techniques</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="culture.html"><i class="fa fa-users"></i>&nbsp;&nbsp;Culture</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="timeline.html"><i class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Timeline</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="site-map.html"><i class="fa fa-sitemap"></i>&nbsp;&nbsp;Site Map</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a>&nbsp;&nbsp;&bull;&nbsp;
+                        <a href="references.html"><i class="fa fa-quote-right"></i>&nbsp;&nbsp;References</a>
+                    </nav>
+                </section>
+            </footer>
+        </div>
+    </body>
+</html>
